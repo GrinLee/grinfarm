@@ -29,7 +29,7 @@
 
 -- DROP TABLE `products`, `admins`, `card`, `orders`, `order_items`, `payments`, `reviews`, `users`;
 
--- DROP TABLE `reviews`;
+-- DROP TABLE `products`;
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";

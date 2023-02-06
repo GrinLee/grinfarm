@@ -1690,8 +1690,7 @@ svg
 .open-overlay {
     display: block;
     opacity: 0.8;
-}
-    
+}    
 
 /* Login Popup */
 
@@ -3858,9 +3857,12 @@ footer .fa:hover { color: var(--bord); }
                     
                     .open-login {
                         display: block;
-                        opacity: 0.9;
+                        opacity: 1;
                     }
-                    
+                    .open-overlay {
+                        display: block;
+                        opacity: 0.8;
+                    }    
                     
                     /* Login Popup */
                     
