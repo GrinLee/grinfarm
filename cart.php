@@ -210,13 +210,13 @@ $(document).ready(function(){
 
     $('.popup-close-login').click(function() {
         $('.popup-login').removeClass('open-login');
-        $('.overlay-login').removeClass('open-login');
+        $('.overlay-login').removeClass('open-overlay');
     });
 
     $('.overlay-login').click(function(e) {
         if (!$('.popup-login').is(e.target) && $('.popup-login').has(e.target).length === 0) {
             $('.popup-login').removeClass('open-login');
-            $('.overlay-login').removeClass('open-login');
+            $('.overlay-login').removeClass('open-overlay');
     }});
     
     $('.buy_btn.check').click(function(e){
@@ -251,7 +251,7 @@ function popupfunc(){
     let form = $('.for-call-popup');
     $('.popup-content').html(form.html());
     $('.popup-login').addClass('open-login').fadeIn(1000);
-    $('.overlay-login').addClass('open-login');
+    $('.overlay-login').addClass('open-overlay');
 }
 
 

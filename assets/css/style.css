@@ -1684,6 +1684,11 @@ svg
     
 .open-login {
     display: block;
+    opacity: 1;
+}
+    
+.open-overlay {
+    display: block;
     opacity: 0.8;
 }
     
