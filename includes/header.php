@@ -43,8 +43,8 @@
                 </ul>
             </div>
             
-            <div class="overlay-acc"></div>
-            <div class="dropAccount">
+            <div class="overlay-acc"  aria-haspopup="true"></div>
+            <div class="dropAccount"  aria-haspopup="true">
                 <!-- <h3>Your Account</h3>
                 <hr> -->
                 <ul>

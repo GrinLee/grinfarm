@@ -2,16 +2,15 @@
             
             <div class="gall_L">
                 <ol>
-                    <li><a href="javascript:void(0)"><img src="assets/img/gallery/img01.png" alt="gall_L">LIFESTYLE </a>
-                    </li>
-                        <p class="sm_t">MEALS</p>
-                        <p class="sm_ct">How Other Countries Celebrate The popular Thanksgiving Farmer's Share compares the retail food price.</p>
-                        <div id="line"></div>
-                    <li><a href="javascript:void(0)"><img src="assets/img/gallery/img03.png" alt="gall_L">ANIMALS, PLANTS </a>
-                    </li>
-                        <p class="sm_t">YARDS</p>
-                        <p class="sm_ct">Canadian turkey farmers take great care to ensure the humane treatment of their turkeys.</p>
-                        <div id="line"></div>
+                    <li><a href="javascript:void(0)"><img src="assets/img/gallery/img01.png" alt="gall_L"></a> </li>
+                    <p class="sm_t">MEALS</p>
+                    <p class="sm_ct">How Other Countries Celebrate The popular Thanksgiving Farmer's Share compares the retail food price.</p>
+                    <div id="line"></div>
+
+                    <li><a href="javascript:void(0)"><img src="assets/img/gallery/img03.png" alt="gall_L"></a> </li>
+                    <p class="sm_t">YARDS</p>
+                    <p class="sm_ct">Canadian turkey farmers take great care to ensure the humane treatment of their turkeys.</p>
+                    <div id="line"></div>
                 </ol>
             </div>
             

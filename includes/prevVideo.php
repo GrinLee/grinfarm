@@ -5,12 +5,12 @@
 
         <div class="sl_cont c_a">
             <video class="slide" autoplay muted loop>
-            <source src="assets/mp4/farm_mv.mp4" type="video/mp4">
+                <source src="assets/mp4/farm_mv.mp4" type="video/mp4">
             </video>
         </div>
         <div class="sl_cont c_b">
             <video class="slide" autoplay muted loop>
-            <source src="assets/mp4/farm_veg_video.mp4" type="video/mp4">
+                <source src="assets/mp4/farm_veg_video.mp4" type="video/mp4">
             </video>
         </div>
         <div class="sl_cont c_c">

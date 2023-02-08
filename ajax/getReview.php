@@ -260,12 +260,13 @@ $(document).ready(function(){
 
 function popupcheckcard(){
     $('.checkCard').addClass('active'); 
+    $('.checkout_container').addClass('hidden'); 
 }
 
 function closecheckcard(){
-
     $('input[type=checkbox]').removeAttr('checked');
     $('.checkCard').removeClass('active');
+    $('.checkout_container').removeClass('hidden'); 
 }
 
 

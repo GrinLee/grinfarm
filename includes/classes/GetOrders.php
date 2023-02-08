@@ -44,8 +44,8 @@ $saveAddress = $row['saveAddress'];
                                     <th>'.strtoupper($order_status).'</th>
                                     <th>TOTAL</th>
                                     <th>SHIP TO</th>
-                                    <th style="width:100px;"></th>
-                                    <th style="width:130px;">ORDER ID: '.strtoupper($order_myId).'</th>
+                                    <th></th>
+                                    <th>ORDER ID: '.strtoupper($order_myId).'</th>
                                 </tr>
                                 <tr>
                                     <td>'.$day.', '.$month.'</td>
@@ -65,18 +65,18 @@ $saveAddress = $row['saveAddress'];
                             <h4>'.$product_name.'</h4>
                             <p>'.$product_thumb.'</p>
                             <p id="tip">Return items: Eligible utill 15 days afterward</p>
-                            <div style="margin: 20px 10px;">
+                            <div>
                                 <button class="ord_buy cart"><a href="productDetail.php">
                                     <i class="fa-solid fa-rotate" style="margin-right: 10px"></i>Buy it again</a></button>
-                                <button><a href="productDetail.php">View your item</a></button>
+                                <button><a href="javascript:void(0)">View your item</a></button>
                             </div>
                         </div>
     
                         <div class="item_btn order">
-                            <button>Return items</button>
-                            <button>Share gift receipt</button>
-                            <button>Get help</button>
-                            <button>Write a product review</button>
+                            <button><a href="javascript:void(0)">Return items</a></button>
+                            <button><a href="javascript:void(0)">Share gift receipt</a></button>
+                            <button><a href="javascript:void(0)">Get help</a></button>
+                            <button><a href="javascript:void(0)">Write a product review</a></button>
                         </div>
                     </div>
 

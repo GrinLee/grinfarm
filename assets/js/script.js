@@ -26,14 +26,20 @@ $(function(){
       btns[i].addEventListener("click", showPopup);
   }
 
-
-
-                /* login popup */
-  $('.headNav ul li #user').mouseover(function(e){    
-    const toggleDrop = document.querySelector(".dropAccount");
-    toggleDrop.classList.toggle("active"); 
-    $('.overlay-acc').addClass('open-acc'); 
+  
+ /* login popup */
+  let userpop = ('ontouchstart' in window) ? 'click' : 'mouseover';
+               
+  $('.headNav ul li #user').on(userpop, function(){   
+      const toggleDrop = document.querySelector(".dropAccount");
+      toggleDrop.classList.toggle("active"); 
+      $('.overlay-acc').addClass('open-acc'); 
   });
+
+
+
+
+
 
   $('.overlay-acc').click(function(e) {
     if (!$('.dropAccount').is(e.target) && $('.dropAccount').has(e.target).length === 0) {
