@@ -112,7 +112,7 @@ body{
         color: var(--brow);     
     }
     
-    a[href="shop.php"]:after{
+    .headNav a[href="shop.php"]:after{
         content: "";
         background-size: Contain;
         background-image: url(../../assets/img/logo/chk_mk.gif);
@@ -564,7 +564,7 @@ body{
     }
     
     section hr{
-        width: 100px;
+        width: 95%;
         border-top: var(--brow) solid 1px ;
     }
     .login-container hr{
@@ -686,6 +686,16 @@ body{
         margin: 0 auto; 
         min-width: 880px;
     }
+
+    .mainAnchor.t_acc .main_sec{
+        width: 62vw;
+        min-width: 400px;
+    }
+
+    .mainAnchor.t_ord .main_sec{
+        width: 62vw;
+        min-width: 400px;
+    }
     .main_title{
         margin: 0px 25px 25px 0px;
         font-size: 2em;
@@ -727,25 +737,25 @@ body{
         cursor:pointer;
     }
     .left_sec{
-        margin: 45px 20px 0 0;
-        width: 275px;
+        margin: 45px 17px 0 0;
+        width: 270px;
         display: block;
     }
     .left_sec.acc{
         margin: 100px 20px 0 0;
     }
     .left_sec.ord{
-        width: 265px;
+        width: 260px;
     }
     .left_sec.sub{
-        width: 285px;
+        width: 265px;
     }
     
     .left_sec.ord > div{
         padding: 0 0 65px;
     }
     .left_sec.acc > div{
-        padding: 10px 5px 70px;
+        padding: 10px 0 70px 5px;
         border-bottom: var(--bord) solid 1px;
     }
     .left_sec.sub > div{
@@ -755,7 +765,7 @@ body{
     /* address book */
     .address.book{
         padding: 0 0 15px 15px;
-        width: 240px;
+        width: 230px;
         margin: 20px 0 0 0;
         border: 0.5px solid var(--bord);
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -1128,6 +1138,13 @@ body{
         border: var(--bord) solid 1px;
         background-color: var(--ligy);
     }
+
+    .ord_center button.ord_buy{
+        height: 35px;
+        width: 196px;
+        padding: 0;
+    }
+
     .p-name.side{ color: var(--brow); }
     .p-desc.side{ color: var(--grey); font-size: 14px; }
     .p-price.side{ color: var(--yebr); margin: 8px 0; }
@@ -1969,7 +1986,7 @@ body{
         display: flex;
         cursor: pointer;
         width: 260px;
-        margin: 15px 0 15px 15px;
+        margin: 15px 0 15px 5px;
         overflow: hidden;
     }
     .order.side .p-name{
@@ -2275,7 +2292,7 @@ body{
             }
 
             
-            a[href="shop.php"]:after{
+            .headNav a[href="shop.php"]:after{
                 left: 110px;
                 top: 10px;
                 width: 25px;
@@ -2941,7 +2958,7 @@ body{
                         color: var(--brow);
                     }
                     
-                    a[href="shop.php"]:after{
+                    .headNav a[href="shop.php"]:after{
                         top: 15px;
                         left: 135px;
                         width: 25px;

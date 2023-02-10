@@ -8,12 +8,10 @@ class GetAccountAlerts {
 
         $html ='';
         $html .='<div class="m_sec ord"> 
-                    <hr>
                     <div class="ord_flex">
                         <a href="javascript:void(0)"><h3><i class=\'fa-solid fa-plus\'></i>&nbsp &nbsp Wish List</h3></a>
                     </div>
-                    <hr>
-
+                    <hr class="order_hr">
                     <div class="ord_center">
                         <p>You haven\'t added any products to "New List"</p>
                         <button class="ord_buy"><a href="shop.php">Start Shopping</a></button>
@@ -27,7 +25,7 @@ class GetAccountAlerts {
 
         $html ='';
         $html .='<div class="m_sec acc empty">
-                    <hr>
+        
                     <div class="ord_center">
                         <p>There is no account info yet. 
                         </br></br> You can create it during the purchase process.</p>
@@ -45,7 +43,6 @@ class GetAccountAlerts {
 
         $html ='';
         $html .='<div class="m_sec sub">
-                    <hr>
                     <div>
                         <form id="subscript" action="account.php" method="POST">
                             <input id="subinput" type="checkbox" checked />

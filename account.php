@@ -246,7 +246,7 @@ function getInputValue($in) {
 
                     <div class="main_sec">
                         <h2 class="main_title">Account  </br> information</h2>
-
+                        <hr class="order_hr">
 
                         <?php if(isset($firstName)){ ?>
                             <div class="m_sec acc">  
@@ -333,7 +333,7 @@ function getInputValue($in) {
 
                     <div class="main_sec">
                         <h2 class="main_title">Newsletter </br> Subscriptions</h2>      
-
+                        <hr class="order_hr">
                         <?php 
                             echo GetAccountAlerts::getSubscriptAlert($chked);
                         ?>

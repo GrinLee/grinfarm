@@ -103,8 +103,7 @@ class AccountSub{
 
     public static function changePassword($data){
 
-        $username = $data['username'];
-        $user = isset($username)?$username:'';
+        $user = isset($data['username']) ? $data['username'] : '';
 
         $html ='';
         $html .='<div class="form-div acc">
