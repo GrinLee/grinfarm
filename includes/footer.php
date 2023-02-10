@@ -1,5 +1,5 @@
 
-    <footer>
+<footer>
         
         <div class="socialTop">
           <img id="tractor" src="assets/img/logo/tractor.png" alt="animation">
@@ -48,7 +48,9 @@
 
             <div class="footCol f_d">
               <h5 class="pb-2">CONNECT WITH US</h5>
-              <input class="conn_email" type="" value="Enter your email">
+              <form id="subs-email" type="post" action="index.php">
+                <input class="subs_email" name="subsemail" placeholder="Enter your email">
+              </form>
               <p>Sign up for the email newsletter today!</br> You may unsubscribe at any time.</p>
             </div>
 
@@ -58,7 +60,6 @@
     </footer>
 
 
-    
 
 </body>
 

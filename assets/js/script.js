@@ -2,6 +2,30 @@
 
 $(function(){   
       
+
+  $(".subs_email").keydown(function(e) {
+    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+        $("#subs-email").submit();
+    }
+  });
+
+  $("#subs-email").validate( { rules: {
+          subsemail: { 
+                required: true,
+                email: true,
+                regex: /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+              }
+        },
+        messages: { subsemail: { 
+                email: "email format error", 
+                regex: "regex type error" }
+        },
+        errorPlacement: function(err, element){
+            element.parent().append(err.addClass('errorMessage'));
+        }
+  });
+
+
   let btns=[];
   btns  = document.querySelectorAll('a[href^="javas"]');
   

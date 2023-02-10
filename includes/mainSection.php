@@ -1,6 +1,6 @@
 <div class="textContainer">
             
-            <div class="gall_L">
+            <div id="gall_L">
                 <ol>
                     <li><a href="javascript:void(0)"><img src="assets/img/gallery/img01.png" alt="gall_L"></a> </li>
                     <p class="sm_t">MEALS</p>
@@ -24,14 +24,14 @@
             <br class="nextline"> 
 
             <div id="gall_R">
-                <div id="gall_L_bx">
+                <div id="gall_r_bx">
                     <div class="outer">
                         <div class="inner">
                             <i class="top left"></i>
                             <i class="top right"></i>
                             <div class="content">
                                 <img id="leaf_p" src="assets/img/logo/leaf.png" alt="gall_R">
-                                <p id="gall_L_t">GRIN'S ORGANIC FARMS</p>
+                                <p id="gall_r_t">GRIN'S ORGANIC FARMS</p>
                                 <p class="sm_ct">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).ipsum</p>
 
                             </div>
