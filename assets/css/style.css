@@ -24,7 +24,7 @@ h6{ color:var(--bord); }
     
 
 
-@media screen and (max-width: 680px){
+@media screen and (min-width: 680px){
     .col-lg-5{ flex: 0 0 auto; width: 42%; }
     .col-lg-6{ flex: 0 0 auto; width: 42%; } 
     .col-lg-3{ flex: 0 0 auto; width: 25%; } 
@@ -1139,6 +1139,7 @@ button.ord_buy{
     height: 35px;
     width: 196px;
     padding: 0;
+    margin: 0 auto;
 }
 
 .p-name.side{ color: var(--brow); }
@@ -1521,7 +1522,9 @@ svg
 .row{ display: flex; flex-wrap: wrap; }
 /* .row >*{ max-width: 100%; } */
 
-
+hr.mx-auto{
+    border-top: var(--bord) solid 1px ;
+}
 
 .dt_container{
     margin-left: 5%;
@@ -1646,6 +1649,7 @@ svg
     padding-top: 3rem;
 }
 .rev_hr{
+    width: 10vw;
     margin-bottom: 25px;
 }
 .rev_cont{
@@ -2184,7 +2188,9 @@ footer .fa {
     color: #fff;
     background: var(--dkbr);
 }
-footer .fa:hover { color: var(--bord); }
+footer .fa:hover { 
+    color: var(--bord); 
+}
 
 
 /* =============================================== */
