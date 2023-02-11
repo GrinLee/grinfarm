@@ -35,8 +35,9 @@ function getInputValue($name) {
 ?>
 
     <?php require_once("includes/header.php"); ?>
-    <div class="wrapper">
-        
+    
+<div class="wrapper">
+    <div class="hbgspace"></div>
 
     <section>
         <div class="login-container">

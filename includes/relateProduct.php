@@ -1,5 +1,5 @@
 
-        <section id="prodRelated" class="mx-auto mt-5 pb-5">
+<section id="prodRelated" class="mx-auto mt-5 pb-5">
             
             <div class="container prd text-center py-5">
                  <h2>You may also like</h3>

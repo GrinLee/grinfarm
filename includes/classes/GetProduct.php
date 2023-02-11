@@ -178,23 +178,7 @@ class GetProduct{
                                             ON od.order_id = oi.order_id
                                             WHERE od.user_id = :u_id 
                                             GROUP BY od.order_id");
-        // $off = 1; $pg = 4;
-        // $this->qry = $this->con->prepare("SELECT od.* FROM orders od
-        //                                 LEFT JOIN order_items oi 
-        //                                 ON od.order_id = oi.order_id
-        //                                 WHERE 1 = 0 
-        //                                     UNION ALL
-        //                                 SELECT od.* FROM od
-        //                                 RIGHT JOIN (
-        //                                     SELECT oi.* FROM oi 
-        //                                     RIGHT JOIN order_items oi2
-        //                                     ON oi.user_id = oi2.user_id
-        //                                     LIMIT :of, :pg) oi
-        //                                 ON od.order_id = oi.order_id
-        //                                 AND od.user_id = :u_id 
-        //                                 GROUP BY od.order_id");
-        // $this->qry->bindValue(":of", $off);
-        // $this->qry->bindValue(":pg", $pg);
+
 
         $this->qry->bindValue(":u_id", $u_id);
         $this->qry->execute();

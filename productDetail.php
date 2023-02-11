@@ -22,7 +22,7 @@ if(isset($_GET['product_id'])){
     <?php require_once("includes/header.php"); ?>
     
     <div class="wrapper">
-        
+        <div class="hbgspace"></div>
 
         <!-- Product Details -->
         <section class="productDetail mx_container my-5 pt-5">
@@ -89,7 +89,7 @@ if(isset($_GET['product_id'])){
             <section id="review" class="mx-auto pb-5">
             <div class="mx_container text-center py-5">
                  <h2>Reviews</h3>
-                 <hr class="rev_hr mx-auto">
+                 <hr class="rev_hr">
             </div>
 
             <div class="rev_container row mx-auto ">

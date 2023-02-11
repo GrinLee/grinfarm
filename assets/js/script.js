@@ -2,6 +2,10 @@
 
 $(function(){   
       
+  $('.hbgbox').click(function() {
+    $('.hbgbox,.headNav,.hbgspace').toggleClass('active');
+  });
+
 
   $(".subs_email").keydown(function(e) {
     if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {

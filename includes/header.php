@@ -41,8 +41,13 @@
 
                     <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
                 </ul>
+             
             </div>
-            
+
+            <div class="hbgbox">
+                <div class="hbger"></div>
+            </div>            
+
             <div class="overlay-acc"  aria-haspopup="true"></div>
             <div class="dropAccount"  aria-haspopup="true">
                 <!-- <h3>Your Account</h3>

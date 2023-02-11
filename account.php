@@ -99,7 +99,7 @@ function getInputValue($in) {
     <?php require_once("includes/header.php"); ?>
 
     <div class="wrapper acc">
-
+        <div class="hbgspace"></div>
 
         <!-- Account -->
         <section class="accContainer ">  

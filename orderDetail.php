@@ -34,7 +34,7 @@ function calc_order_total($od){
     <?php require_once("includes/header.php"); ?>
     
     <div class="wrapper">
-        
+        <div class="hbgspace"></div>
 
         <!-- Order details -->
         <section class="orders container my-5 py-3">

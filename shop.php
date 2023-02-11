@@ -45,7 +45,7 @@ $next_page = $p_nb + 1;
     <?php require_once('includes/header.php'); ?>
 
     <div class="wrapper">
-
+        <div class="hbgspace"></div>
 
         <div class="shopContainer">
             

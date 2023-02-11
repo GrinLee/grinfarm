@@ -42,7 +42,7 @@ function getInputValue($input) {
     <?php require_once("includes/header.php"); ?>
     
     <div class="wrapper">
-
+        <div class="hbgspace"></div>
 
 
         <!-- Cart -->
