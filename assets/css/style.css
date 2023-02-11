@@ -301,6 +301,9 @@ aside p{
     line-height: 70px;
     text-decoration: underline;
 }
+.sl_cont_hid{
+    display: none;
+}
 
 .bannbtn {
     position: absolute;
@@ -2091,8 +2094,16 @@ footer{
     -webkit-animation: moveit 30s linear forwards;
 }
 /* tractor oper */
-@keyframes moveit{ 0%{left: 10px;} 50%{left: 95%;} 100%{left: 10px;} }
-@-webkit-keyframes moveit{ 0%{left: 10px;} 50%{left: 95%;} 100%{left: 10px;} }
+@keyframes moveit{ 
+    0%{left: 10px;} 
+    50%{left: 95%;} 
+    100%{left: 10px;} 
+}
+@-webkit-keyframes moveit{ 
+    0%{left: 10px;} 
+    50%{left: 95%;} 
+    100%{left: 10px;} 
+}
 
 .footCont{
     position: relative;
@@ -2285,9 +2296,11 @@ footer .fa:hover {
 
         
         /* hb menu */
+
         .hbgspace.active{
             display: block;
             height:350px;
+            transition: 0.5s;
         }
 
         .hbgbox {
@@ -2309,6 +2322,7 @@ footer .fa:hover {
             position: absolute;
             transition: 0.2s;
         }
+
         .hbger:before { top: -14px; }
         .hbger:after { top: 14px; }
         
@@ -2329,7 +2343,6 @@ footer .fa:hover {
             top: 0;
             transform:rotate(45deg);
         }
-        
         .hbgbox.active .hbger:after {
             top: 0;
             transform:rotate(135deg);
@@ -2966,7 +2979,15 @@ footer .fa:hover {
                 /* ================================== */
                 @media screen and (max-width: 420px){ 
 
+                    main .movable, #gall_L li img{
+                        display: none;
+                    }
 
+
+                    #gall_L ol > li {
+                        margin-top: -10em;
+                    }
+                    
                     header{
                         position: relative;
                         font-size: 20px;
@@ -3107,6 +3128,7 @@ footer .fa:hover {
                     
                     /* main banner ---------------------------- */
 
+                    
                     .wrapper {
                         min-width: 420px;
                         margin: 0 auto 80px;
@@ -3149,10 +3171,8 @@ footer .fa:hover {
                     
                     .sl_cont.c_a aside{ margin-left: 45vw; }
                     .sl_cont.c_b aside{ margin-left: 4vw; }
-                    .sl_cont.c_c aside{ margin-left: 6vw;
-                    margin-top: -48vh; }
+                    .sl_cont.c_c aside{ margin-left: 6vw; margin-top: -48vh; }
                     
-
                     .sl_cont aside{ 
                         margin-top: -44vh; 
                     } 
@@ -3167,12 +3187,21 @@ footer .fa:hover {
                     }
                     
                     .bannbtn { display: none; }
-                
+
                     #underline{ 
                         display: none;
                     }
                     
-                    
+                    .sl_cont_hid{ display: block; width: 100%; margin-top: 2em;}
+                    .sl_cont_hid aside{ margin: -95vw 0 0 -41vw;}
+                    .sl_cont_hid aside p{ 
+                        margin-left: 45vw; 
+                        margin-top: 200px;
+                        font-size: 2.4em;
+                        line-height: 41px;
+                    }
+
+
                     /* video Pop ------------------------------ */
                     
  
@@ -3218,7 +3247,7 @@ footer .fa:hover {
                     #gall_L li:hover img{ transform: none; }
 
                     .sm_t{  
-                        margin: 30px 0 20px;
+                        margin: 10px 0 20px;
                         font-weight: 200;
                         font-size: 1.2em;
                     }
@@ -3227,12 +3256,14 @@ footer .fa:hover {
                     }
 
                     #gall_L .sm_ct{
+                        padding-top: 20px;
+                        border-top: var(--bord) solid 1px;
                         margin: 0 auto;
-                        width: 60vw;
+                        width: 79vw;
                     }
 
                     #line{
-                        border-bottom: none;
+                        margin: -9px auto 50px;
                     }
                     
 

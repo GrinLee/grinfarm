@@ -67,8 +67,6 @@ $(function(){
 
 
 
-
-
   $('.overlay-acc').click(function(e) {
     if (!$('.dropAccount').is(e.target) && $('.dropAccount').has(e.target).length === 0) {
         $('.dropAccount').removeClass('active');
@@ -77,15 +75,12 @@ $(function(){
   });
   
   
-
-
-
                 /* main banner slide */
   $('main').each(function() {         
   
       let $bann    = $(this),
           $movable = $(".movable", $bann), 
-          $slides  = $(">*", $movable),     // children <div>
+          $slides  = $(">*", $movable),     // <div class="sl_cont">
           num      = $slides.length,
           one      = 1,
           mov      = one,
@@ -110,6 +105,7 @@ $(function(){
     $(".sl_cont.c_a").append("<aside><p>about conven-<br>tional farming</p></aside>");
     $(".sl_cont.c_b").append("<aside><p>fresh high<br>quality products</p></aside>");
     $(".sl_cont.c_c").append("<aside><p>from ontario's<br>farms</p></aside>");
+    $(".sl_cont_hid").append("<aside><p>about conven-<br>tional farming</p></aside>");
 
 
     /* video popup */
