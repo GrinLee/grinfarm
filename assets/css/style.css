@@ -476,8 +476,6 @@ aside p{
     grid-column: 2 / 3;  grid-row: 1 / -1; 
     padding-left: 45px;
     border-left: 1px solid var(--bord);
-    
-    /* border-right: 0px solid var(--bord); */
 }
 #gall_M .sm_ct{
     height: 430px;
@@ -490,6 +488,12 @@ aside p{
     padding:0;
     box-sizing: border-box;
     overflow: hidden;
+/*  background-image: url('../img/greenLeaf/greenfarm.PNG');
+    background-size: 30%;
+    background-position-x:40%;      |%-->  |
+    background-position-y:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;        */
 }
 .mid_img{ 
     margin-left:-45px;
@@ -2476,7 +2480,9 @@ footer .fa:hover {
         }
 
         .sm_t{  
-            margin: -150px 0 0 40vw;
+            border-top: var(--bord) solid 1px;
+            padding-top: 15px;
+            margin: -158px 0 0 40vw;
         }
 
         .sm_ct{
@@ -2500,14 +2506,17 @@ footer .fa:hover {
 
         #gall_M .sm_ct{
             width: 60vw;
-            margin: 0 0 35px 17vw;
+            margin: 0 0 5px 17vw;
         }
         .gall_m_img{
             width: 60vw;
-            height: auto;
+            height: 420px;
             margin: 0 0 35px 17vw;
         }
-
+        .mid_img{ 
+            height: 130%;
+            overflow: hidden;
+        }
         #gall_R{ 
             grid-column: 1 / 2;  
             grid-row: 3 / 4; 
@@ -3250,7 +3259,7 @@ footer .fa:hover {
                     #gall_L li:hover img{ transform: none; }
 
                     .sm_t{  
-                        margin: 10px 0 20px;
+                        margin: 10px 28px 20px;
                         font-weight: 200;
                         font-size: 1.2em;
                     }
