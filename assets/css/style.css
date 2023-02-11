@@ -3273,15 +3273,25 @@ footer .fa:hover {
                     #gall_M .sm_ct{
                         font-weight: 200;
                         width: 82vw;
-                        margin: 0 0 35px 8vw;
+                        margin: 0 0 15px 8vw;
+                        height: 196px;
                     }
+                    #gall_R .content .sm_ct{
+                        height: 324px;
+                    }
+                    #gall_R .content .sm_ct span{
+                        display: none;
+                    }
+  
                     .gall_m_img{
                         width: 82vw;
-                        height: 440px;
+                        height: 320px;
                         margin: 0 0 20px 35px;
                     }
                     .mid_img{ 
                         margin-left:-38px;
+                        height: 49vh;
+                        overflow: hidden;
                     }
                     .mid_img:active{ 
                         opacity: 1;
@@ -3300,6 +3310,7 @@ footer .fa:hover {
                     .outer p{
                         margin: 20px auto;
                         padding: 0 20px;
+                        width: 78vw;
                     }
                     .cont{ 
                         width: 75vw;
@@ -3842,10 +3853,9 @@ footer .fa:hover {
                     /* footer */
                     footer{ 
                         width: 420px;
-                        padding-bottom: 300px;
-                        height: 100vh;
+                        height: 90vh;
                     }
-                    
+
                     .socialTop{
                         padding-top: 10px;
                     }
@@ -3854,6 +3864,7 @@ footer .fa:hover {
                     }
 
                     .footCol.f_a{
+                        display: none;
                         padding-top: 0;
                         width: 250px;
                         margin: 0 0 0 40px;
@@ -3863,6 +3874,7 @@ footer .fa:hover {
                         margin: 0 0 0 40px;
                     }
                     .footCol.f_c{
+                        display: none;
                         text-align: right;
                         margin: 0 40px 0 0;
                         border-right:var(--bord) solid 0px;
@@ -3870,7 +3882,9 @@ footer .fa:hover {
                     }
 
                     .footCol.f_d{
-                        margin: 0 0 0 40px;
+                        margin: 0 40px 0 20px;
+                        text-align: right;
+                        width: 370px;
                     }
                     footer ul{
                         margin-left: -10%;
