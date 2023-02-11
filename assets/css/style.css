@@ -3191,7 +3191,10 @@ footer .fa:hover {
                     #underline{ 
                         display: none;
                     }
-                    
+                    .sl_cont_hid video{
+                        width: 40vw;
+                        min-width: 415px;
+                    }
                     .sl_cont_hid{ display: block; width: 100%; margin-top: 2em;}
                     .sl_cont_hid aside{ margin: -95vw 0 0 -41vw;}
                     .sl_cont_hid aside p{ 
@@ -3291,13 +3294,12 @@ footer .fa:hover {
                     .mid_img{ 
                         margin-left:-38px;
                         height: 49vh;
+                        opacity: 1;
+                        object-fit: cover;
                         overflow: hidden;
                     }
                     .mid_img:hover{ 
-                        margin-left:-38px;
-                        height: 49vh;
-                        opacity: 1;
-                        transform: scale(1.1); 
+                        transform: none; 
                     }
                     
 
