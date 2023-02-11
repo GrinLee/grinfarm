@@ -3293,10 +3293,13 @@ footer .fa:hover {
                         height: 49vh;
                         overflow: hidden;
                     }
-                    .mid_img:active{ 
+                    .mid_img:hover{ 
+                        margin-left:-38px;
+                        height: 49vh;
                         opacity: 1;
+                        transform: scale(1.1); 
                     }
-
+                    
 
 
                     #gall_R{ 

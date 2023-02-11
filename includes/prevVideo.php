@@ -21,7 +21,7 @@
 
 
     <div class="sl_cont_hid">
-        <video class="slide" autoplay muted loop>
+        <video autoplay muted loop>
             <source src="assets/mp4/farm_mv_sm.mp4" type="video/mp4">
         </video>
     </div>
