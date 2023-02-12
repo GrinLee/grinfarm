@@ -143,7 +143,7 @@ function getInputValue($input) {
                     <div class="checkout_container">
                         <form method="POST">
                             <input type="hidden" name="loggedIn" value="<?php echo isset($_SESSION['loggedIn']) ? $_SESSION['loggedIn']:null; ?>" />
-                            <button class="buy_btn check" type="submit" name="checkout">Checkout</button>
+                            <button href=".cart_container" class="buy_btn check" type="submit" name="checkout">Checkout</button>
                         </form>
                     </div>
                 </div>

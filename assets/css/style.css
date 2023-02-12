@@ -29,7 +29,7 @@ h6{ color:var(--bord); }
     .col-lg-6{ flex: 0 0 auto; width: 42%; } 
     .col-lg-3{ flex: 0 0 auto; width: 25%; } 
 }
-@media screen and (max-width: 420px){
+@media screen and (max-width: 414px){
     .col-md-12{ flex: 0 0 auto; width: 100%; } 
     .col-md-4{ flex: 0 0 auto; width: 100%; } 
 }
@@ -171,14 +171,14 @@ header h2{
     box-sizing: border-box;
     border-radius: 6px;
     transition: 0.3s;
-    visibility: hidden;
+    display: none;
     opacity: 0;
     z-index: 103 !important;
 }
 
 .dropAccount.active {
     top: 90px;
-    visibility: visible;
+    display: block;
     opacity: 1;
 }
 
@@ -2986,26 +2986,27 @@ footer .fa:hover {
             
 
                 /* ================================== */
-                @media screen and (max-width: 420px){ 
+                @media screen and (max-width: 414px){ 
 
                     main .movable, #gall_L li img{
                         display: none;
                     }
-
-
                     #gall_L ol > li {
                         margin-top: -10em;
                     }
                     
+
+
                     header{
                         position: relative;
                         font-size: 20px;
                     }
                     
                     .headContainer{
+                        max-width: 100%;
                         min-width: 414px;
                         height: 82px;
-                            margin-top: 10px;
+                        margin-top: 10px;
                     }
        
                     header img{ 
@@ -3019,24 +3020,26 @@ footer .fa:hover {
                         width: 380px;
                     }  
                     .headNav ul { 
-                        margin-left: -5px;
+                        margin-left: 0;
                     }
                     .headNav li { 
-                        margin: 0;
-                        padding: 20px 0 20px;
+                        margin: 0 0 0 -5px;
+                        padding: 20px 0;
                         border-bottom: var(--ligy) solid 1.5px;
                     }
-                    /* @media (hover: hover) { */
-                        .headNav li:hover, .headNav li:active{ 
-                            margin: 0;
-                            padding: 20px 0 20px;
-                            border-bottom: var(--grey) solid 1.5px;
-                        }
-                    /* } */
+                /* @media (hover: hover) { */
+                    .headNav li:hover, .headNav li:active{ 
+                        margin: 0;
+                        padding: 20px 0;
+                        border-bottom: var(--grey) solid 1.5px;
+                    }
+                /* } */
                     
                     .headNav li a{ 
                         text-decoration: none;
                     }
+
+
                     .hbgspace.active{
                         display: block;
                         height:400px;
@@ -3046,8 +3049,8 @@ footer .fa:hover {
                         display: block;
                         position: absolute;
                         top: -1vh;
-                        right: -3vw;
-                        width: 100px;
+                        right: 0;
+                        width: 85px;
                         height: 100px;
                         cursor: pointer;
                     }
@@ -3139,8 +3142,9 @@ footer .fa:hover {
 
                     
                     .wrapper {
-                        min-width: 420px;
-                        margin: 0 auto 80px;
+                        max-width: 100%;
+                        min-width: 414px;
+                        margin: 0 0 80px;
                     }
 
                     .accContainer{ 
@@ -3302,7 +3306,7 @@ footer .fa:hover {
                     }
                     .mid_img{ 
                         margin-left:-38px;
-                        height: 49vh;
+                        height: 69vh;
                         opacity: 1;
                         object-fit: cover;
                         overflow: hidden;
@@ -3554,7 +3558,7 @@ footer .fa:hover {
                     }
                     
                     .searchContainer{
-                        max-width: 420px;
+                        max-width: 414px;
                     }
                     
                     
@@ -3570,7 +3574,7 @@ footer .fa:hover {
                     }
                     .listLabel{
                         padding-top: 3rem!important;
-                        max-width: 420px;
+                        max-width: 414px;
                         margin-left: 30px;
                     }
    
@@ -3599,7 +3603,7 @@ footer .fa:hover {
                     }
                     
                     .mainAnchor {
-                        width: 420px;
+                        width: 414px;
                     }
                     /* page ----------------------------- */
                     .t_acc .main_sec {
@@ -3624,7 +3628,7 @@ footer .fa:hover {
 
                     .mt-5{ margin-top: 3rem; }
                     
-                    .mx_container{ max-width: 420px; }
+                    .mx_container{ max-width: 414px; }
                     
                     .dt_container{
                         margin: 2%;
@@ -3866,7 +3870,7 @@ footer .fa:hover {
                     
                     /* footer */
                     footer{ 
-                        width: 420px;
+                        width: 414px;
                         height: 90vh;
                     }
 
@@ -3874,6 +3878,7 @@ footer .fa:hover {
                         padding-top: 10px;
                     }
                     .footCont{
+                        width: 100%;
                         display: block;
                     }
 

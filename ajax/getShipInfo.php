@@ -102,7 +102,7 @@ $html .= '<div class="getInfo" display="block">
             </div>
             <div class="checkout_container">
                 <input type="hidden" name="username" value="'.$_SESSION['loggedIn'].'" />
-                <button class="buy_btn save" type="submit" name="submitSave"> Save $ Continue </button>
+                <button href=".summ_table" class="buy_btn save" type="submit" name="submitSave"> Save $ Continue </button>
             </div>
             <label class="address_cancel">Cancel</label><br>
 
