@@ -3479,7 +3479,6 @@ footer .fa:hover {
                     
                     #ord_table td:nth-child(5), #ord_table th:nth-child(5){
                         color: var(--oran);
-                        background-color: var(--ligy);
                     }
     
                     #ord_table th, #ord_table td{
@@ -3602,6 +3601,7 @@ footer .fa:hover {
                     
                     .mainAnchor {
                         width: 414px;
+                        min-width: 100%;
                     }
                     /* page ----------------------------- */
                     .t_acc .main_sec {
