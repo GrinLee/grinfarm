@@ -68,7 +68,7 @@ $next_page = $p_nb + 1;
                                 <div class="form-check">
                                     <input class="searchInput" value="foodbox" type="radio" 
                                         name="category" <?php echo (isset($category) && $category =='foodbox')?'checked':''; ?> >
-                                    <label class="cate-label" for="flexRadioDefault1">Footbox</label>
+                                    <label class="cate-label" for="flexRadioDefault1">Foodbox</label>
                                 </div>
 
                                 <div class="form-check">
