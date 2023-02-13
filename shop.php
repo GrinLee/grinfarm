@@ -100,6 +100,8 @@ $next_page = $p_nb + 1;
                                         name="category" <?php echo (isset($category) && $category =='fruits')?'checked':''; ?> >
                                     <label class="cate-label" for="flexRadioDefault1">Fruits</label>
                                 </div>
+                                <div class="form-check">
+                                </div>
 
                             </div>
                         </div> 

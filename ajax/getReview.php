@@ -220,32 +220,52 @@ $(document).ready(function(){
             e.preventDefault();
             // alert(getvalues("login-form"));
             popupcheckcard();
+            $('.buy_btn.check').attr("cardhalf", "yes");
         }
     });
 
 
-
     $('.buy_btn.check').attr("form", "login-form");
+
     $('.buy_btn.check').click(function(e){
 
-        e.preventDefault();
-        let postData = $('#login-form').serialize();
+        $(".halfAlert").empty();
 
-        $.ajax({
-            url : 'ajax/ship_handler.php',
-            type : 'POST',
-            data : postData,
-            success : function(data){
-                if(data){
-                    window.location.href = "orderDetail.php"; 
-                }
-                return false;
-            },
-            fail: function() {
-                alert("Ajax with ship_handler having Error");
-            }
+        if(!e.target.hasAttribute("cardhalf")){
 
-        });
+            let txt ="<p>Please finish filling out the Payment process</p>";
+            $('.halfAlert').append(txt);
+            $('.halfAlert').addClass("active");
+
+            setTimeout(function() {
+            $('.halfAlert').removeClass('active');
+            }, 2000);
+
+            e.preventDefault();
+
+        } else {
+
+                e.preventDefault();
+                let postData = $('#login-form').serialize();
+
+                $.ajax({
+                    url : 'ajax/ship_handler.php',
+                    type : 'POST',
+                    data : postData,
+                    success : function(data){
+                        if(data){
+                            window.location.href = "orderDetail.php"; 
+                        }
+                        return false;
+                    },
+                    fail: function() {
+                        alert("Ajax with ship_handler having Error");
+                    }
+                });
+
+        }
+
+
     });
 
 
@@ -256,18 +276,20 @@ $(document).ready(function(){
     $('.checkCard').click(function() {
         closecheckcard();
     });
+
+
 }); 
 
 function popupcheckcard(){
     $('.checkCard').addClass('active'); 
     $('.buy_btn.subm').addClass('hidden'); 
 }
-
 function closecheckcard(){
     $('input[type=checkbox]').removeAttr('checked');
     $('.checkCard').removeClass('active');
     $('.buy_btn.subm').removeClass('hidden'); 
 }
+
 
 
 </script>

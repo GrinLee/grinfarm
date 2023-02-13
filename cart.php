@@ -144,8 +144,11 @@ function getInputValue($input) {
                         <form method="POST">
                             <input type="hidden" name="loggedIn" value="<?php echo isset($_SESSION['loggedIn']) ? $_SESSION['loggedIn']:null; ?>" />
                             <button href=".cart_container" class="buy_btn check" type="submit" name="checkout">Checkout</button>
+                            <div class="halfAlert"></div>
                         </form>
                     </div>
+
+                    
                 </div>
 
             <?php } ?> 
@@ -219,6 +222,8 @@ $(document).ready(function(){
             $('.overlay-login').removeClass('open-overlay');
     }});
     
+
+
     $('.buy_btn.check').click(function(e){
 
         e.preventDefault();
@@ -245,6 +250,12 @@ $(document).ready(function(){
         });
 
     });
+
+
+
+
+
+
 });
 
 function popupfunc(){

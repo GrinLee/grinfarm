@@ -901,7 +901,7 @@ input[type="checkbox"]{
 .item_name.order{
     padding: 0 2% 0 15px;
     width: 100%;
-    min-width: 240px;
+    min-width: 260px;
     text-align: left;
 }
 .item_name.order h4{

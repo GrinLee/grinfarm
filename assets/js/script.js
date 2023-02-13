@@ -1,7 +1,11 @@
 
-
 $(function(){   
       
+
+
+
+
+
   $('.hbgbox').click(function() {
     $('.hbgbox,.headNav,.hbgspace').toggleClass('active');
   });
@@ -147,6 +151,19 @@ $(function(){
           mainImg.src = smImg[i].src;
       });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
       
