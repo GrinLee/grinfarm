@@ -245,7 +245,7 @@ $(document).ready(function(){
                 $('.cart_listL').html(data); 
             },
             error: function() {
-                alert("Some Error happening");
+                alert("Some Error happening with getShipInfo ajax");
             }
         });
 

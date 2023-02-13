@@ -125,11 +125,11 @@ class Account {
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 $charactersLength = strlen($characters);
                 $randomString = '';
-                for ($i = 0; $i < $length; $i++) {
+                for ($i = 0; $i < 3; $i++) {
                     $randomString .= $characters[rand(0, $charactersLength - 1)];
                 }
-                $randomNumber = rand(1000,9999);
-                $my_id = $randomNumber.'-'.$nid.'-'.$randomString;
+                $randomNumber = rand(10,99);
+                $my_id = $randomNumber.'-'.$nid.$randomString;
                                
                 return $my_id;
             }
