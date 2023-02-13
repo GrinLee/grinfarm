@@ -65,19 +65,13 @@ function getInputValue($name) {
                         <input type="text" class="form-input" value="<?php getInputValue("username"); ?>" name="username" placeholder="Enter User Name" required />
                     </div>
                     <div class="form-div">
-                        <?php echo $account->getError(Constants::$emailsDontMatch); ?>
                         <?php echo $account->getError(Constants::$emailInvalid); ?>
                         <?php echo $account->getError(Constants::$emailTaken); ?>
                         <label>Email</label>
                         <input type="email" class="form-input" value="<?php getInputValue("email"); ?>" name="email" placeholder="Enter Email" required />
                     </div>
+     
                     <div class="form-div">
-                        <label>Email 2</label>
-                        <input type="email" class="form-input" value="<?php getInputValue("email2"); ?>" name="email2" placeholder="Enter Confirm Email" required />
-                    </div>
-
-                    <div class="form-div">
-                        
                         <?php echo $account->getError(Constants::$passwordsDontMatch); ?>
                         <?php echo $account->getError(Constants::$passwordLength); ?>
                         <label>Password</label>

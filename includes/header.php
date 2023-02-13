@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="icon" href="assets/img/logo/ficon.png" type="image/ico">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|+Mono" rel="stylesheet">

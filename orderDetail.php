@@ -38,7 +38,7 @@ function calc_order_total($od){
 
         <!-- Order details -->
         <section class="orders container my-5 py-3">
-            <div class="container mt-5">
+            <div class="container">
                 <h2 class="font-weight-bold text-center">Your Orders</h2>
                 <!-- <hr class="mx-auto"> -->
 

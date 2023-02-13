@@ -1,6 +1,6 @@
 
 <footer>
-        
+      <div class="footContainer">
         <div class="socialTop">
           <img id="tractor" src="assets/img/logo/tractor.png" alt="animation">
           <ul>
@@ -56,7 +56,7 @@
 
 
         </div><!-- footCont -->
-
+      </div>
     </footer>
 
 

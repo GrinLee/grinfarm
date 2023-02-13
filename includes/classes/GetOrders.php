@@ -36,22 +36,30 @@ $saveAddress = $row['saveAddress'];
         $html ='';
         $html .='<div class="orderinfo_row">
 
-        
-                    <div class="orderinfo_top">
+                    <div class="oi_1r_1c">
                         <table id="ord_table">
                             <tbody>
                                 <tr>
                                     <th>'.strtoupper($order_status).'</th>
                                     <th>TOTAL</th>
                                     <th>SHIP TO</th>
-                                    <th></th>
-                                    <th>ORDER ID: '.strtoupper($order_myId).'</th>
                                 </tr>
                                 <tr>
                                     <td>'.$day.', '.$month.'</td>
                                     <td>CAD $'.$total.'</td>
                                     <td>'.$username.'</td>
-                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="oi_1r_2c">
+                        <table id="ord_table">
+                            <tbody>
+                                <tr>
+                                    <th>ORDER ID: '.strtoupper($order_myId).'</th>
+                                </tr>
+                                <tr>
                                     <td><a href="javascript:void(0)">View order details</a></td>
                                 </tr>
                             </tbody>
@@ -59,9 +67,9 @@ $saveAddress = $row['saveAddress'];
                     </div>
 
 
-                    <div class="list_item order cart">
+                    <div class="oi_2r_1c">
                         <img src="assets/img/products/'.$product_image1.'"/>
-                        <div class="item_name order cart">
+                        <div class="item_name order">
                             <h4>'.$product_name.'</h4>
                             <p>'.$product_thumb.'</p>
                             <p id="tip">Return items: Eligible utill 15 days afterward</p>
@@ -71,7 +79,9 @@ $saveAddress = $row['saveAddress'];
                                 <button><a href="javascript:void(0)">View your item</a></button>
                             </div>
                         </div>
-    
+                    </div>
+
+                    <div class="oi_2r_2c">
                         <div class="item_btn order">
                             <button><a href="javascript:void(0)">Return items</a></button>
                             <button><a href="javascript:void(0)">Share gift receipt</a></button>
@@ -79,7 +89,6 @@ $saveAddress = $row['saveAddress'];
                             <button><a href="javascript:void(0)">Write a product review</a></button>
                         </div>
                     </div>
-
                     
                 </div>';
 

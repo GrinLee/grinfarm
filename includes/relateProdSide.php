@@ -1,9 +1,10 @@
 
-<div class="sideContainer cart mx-auto mt-5 pb-5">
+<div class="sideContainer cart mt-5 pb-5">
             
             <div class="side arr py-5">
-                 <hr class="side mx-auto">
+                 
                  <h3>Featured items You may like</h3>
+                 <hr class="side mx-auto">
             </div>
 
             <div class="prd_container side row mx-auto ">
