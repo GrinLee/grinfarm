@@ -106,11 +106,13 @@ class Account {
         $query->bindValue(":u_i", $u_i);
         $query->bindValue(":c_i", $c_i);
         $query->bindValue(":un", $fn." ".$ln);
+
         $query->bindValue(":ph", $ph);
         $query->bindValue(":ad", $ad);
         $query->bindValue(":ad2", $ad2);
         $query->bindValue(":co", $co);
         $query->bindValue(":pr", $pr);
+        
         $query->bindValue(":ci", $ci);
         $query->bindValue(":po", $po);
         $query->bindValue(":sa", $sa);
@@ -119,7 +121,7 @@ class Account {
             $this->newid = $this->con->lastInsertId();
             $new_id = $this->newid;
             
-            function getRandomChar($length = 4) {
+            function getRandomChar($nid) {
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 $charactersLength = strlen($characters);
                 $randomString = '';
@@ -127,12 +129,12 @@ class Account {
                     $randomString .= $characters[rand(0, $charactersLength - 1)];
                 }
                 $randomNumber = rand(1000,9999);
-                $my_id = $randomNumber.$new_id.$randomString;
-                                // $my_id = $randomNumber.'-'.$new_id.'-'.$randomString;
+                $my_id = $randomNumber.'-'.$nid.'-'.$randomString;
+                               
                 return $my_id;
             }
 
-            $my_id = getRandomChar();
+            $my_id = getRandomChar($new_id);
 
             $query2 = $this->con->prepare("UPDATE orders 
                                             SET order_myId = :o_mi
