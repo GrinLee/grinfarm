@@ -115,16 +115,21 @@ $(function(){
     /* video popup */
     $(".slide").click(function(e){ 
 
-      let v_attr = e.target.firstElementChild.getAttribute('src');
-      let popup = $('.popup');
-      let v_elm = $('<video autoplay controls loop></video>');
-      let source = $('<source type="video/mp4">');
-      source.attr({ src: v_attr});
-      v_elm.append(source);
-      popup.append(v_elm);
-      $('.popup, .overlay').addClass('open');
-      console.log(v_elm);
-      
+      let w = window.innerWidth;
+
+      if( w < 420 || ('ontouchstart' in window) == false ){
+        let v_attr = e.target.firstElementChild.getAttribute('src');
+        let popup = $('.popup');
+        let v_elm = $('<video autoplay controls loop></video>');
+        let source = $('<source type="video/mp4">');
+
+        source.attr({ src: v_attr});
+        v_elm.append(source);
+        popup.append(v_elm);
+        $('.popup, .overlay').addClass('open');
+        console.log(v_elm);
+      }
+
     });
   
   
@@ -151,11 +156,6 @@ $(function(){
           mainImg.src = smImg[i].src;
       });
   }
-
-
-
-
-
 
 
 

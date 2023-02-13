@@ -8,6 +8,13 @@
 
 -- Database: `grinfarm`
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- START TRANSACTION;
+-- SET time_zone = "+00:00";
+
+
+
+
 -- ALTER TABLE `order_items` 
 -- ADD `order_status` varchar(100) NULL DEFAULT 'on_hold' AFTER `order_cost`;
 
@@ -29,12 +36,40 @@
 
 -- DROP TABLE `products`, `admins`, `card`, `orders`, `order_items`, `payments`, `reviews`, `users`;
 
--- DROP TABLE `products`;
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_myId` varchar(100) NULL DEFAULT 0;
+  `order_cost` decimal(6,2) NOT NULL,
+  `order_status` varchar(100) NULL DEFAULT 'on_hold',
+  `user_id` int(11) NOT NULL,
+  `card_id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `address2` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `prov` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `postal` varchar(255) NOT NULL,
+  `saveAddress` int(3) NULL DEFAULT 0,
+  `order_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
--- START TRANSACTION;
--- SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `order_items` (
+  `item_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_image1` varchar(255) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `product_quantity` int(11) NOT NULL,
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -65,41 +100,6 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `review_text` varchar(6553) NOT NULL,
   `review_date` DATETIME  NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`review_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-
-CREATE TABLE IF NOT EXISTS `orders` (
-  `order_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_cost` decimal(6,2) NOT NULL,
-  `order_status` varchar(100) NULL DEFAULT 'on_hold',
-  `user_id` int(11) NOT NULL,
-  `card_id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `phone` int(11) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `address2` varchar(255) NOT NULL,
-  `country` varchar(255) NOT NULL,
-  `prov` varchar(255) NOT NULL,
-  `city` varchar(255) NOT NULL,
-  `postal` varchar(255) NOT NULL,
-  `saveAddress` int(3) NULL DEFAULT 0,
-  `order_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-
-CREATE TABLE IF NOT EXISTS `order_items` (
-  `item_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `product_image1` varchar(255) NOT NULL,
-  `product_price` int(11) NOT NULL,
-  `product_quantity` int(11) NOT NULL,
-  PRIMARY KEY (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
