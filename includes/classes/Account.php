@@ -49,11 +49,11 @@ class Account {
         return false;
     }
 
-    public function register($fn, $ln, $un, $em, $em2, $pw, $pw2) {
+    public function register($fn, $ln, $un, $em, $pw, $pw2) {
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
         $this->validateUsername($un);
-        $this->validateEmails($em, $em2);
+        $this->validateEmails($em);
         $this->validatePasswords($pw, $pw2);
 
         if(empty($this->errorArray)) {
@@ -316,11 +316,7 @@ class Account {
         }
     }
 
-    private function validateEmails($em, $em2) {
-        if($em != $em2) {
-            array_push($this->errorArray, Constants::$emailsDontMatch);
-            return;
-        }
+    private function validateEmails($em) {
 
         if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
             array_push($this->errorArray, Constants::$emailInvalid);

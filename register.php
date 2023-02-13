@@ -13,11 +13,10 @@ if(isset($_POST["submitButton"])) {
     $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
     $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
     $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
-    $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
     $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
     $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
     
-    $newid = $account->register($firstName, $lastName, $username, $email, $email2, $password, $password2);
+    $newid = $account->register($firstName, $lastName, $username, $email, $password, $password2);
     if($newid != null){
         $_SESSION["user_id"] = $newid;
         $_SESSION["username"] = $username;
