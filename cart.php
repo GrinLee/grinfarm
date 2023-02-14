@@ -4,8 +4,9 @@ require_once("includes/config.php");
 require_once("includes/classes/FormSanitizer.php");
 require_once("includes/classes/Constants.php");
 require_once("includes/classes/Account.php");
-
 require_once("includes/cartSession.php");
+
+
 
 $account = new Account($con);
 
@@ -60,7 +61,8 @@ function getInputValue($input) {
                         <div class="cart_title mt-5">
                             <h1 class="font-weight-bold">Your Cart</h2>
                         </div>
-                        <hr>
+                        <?php echo isset($_SESSION['cart'])?"<hr>":null; ?>
+                   
 
                         <div class="list_group">
 
@@ -115,6 +117,7 @@ function getInputValue($input) {
                         <h2 class="font-weight-bold">Order Summary</h2>
                     </div>
                     <hr>
+                   
 
                     <div class="summ_table">   <!-- table -->
                         <table>
@@ -152,7 +155,14 @@ function getInputValue($input) {
                     
                 </div>
 
-            <?php } ?> 
+            <?php } else { ?>
+
+                    <div class="ord_center">
+                        <p>You haven't added any products to "New List"</p>
+                        <button class="ord_buy"><a href="shop.php">Start Shopping</a></button>
+                    </div>
+
+            <?php }?> 
 
             </div>
           

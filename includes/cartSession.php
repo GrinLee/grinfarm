@@ -18,7 +18,7 @@ if(isset($_POST['submit']) ){    // from productDetail.php
                 'p_price' => $_POST['product_price'],
                 'p_image' => $_POST['product_image1'],
                 'p_qty' => $_POST['product_qty']
-            );      // Array ( [0] => Array ( [id] => 87 [name] => Gam.. 
+            );      
 
             $_SESSION['cart'][$p_id] = $prd_array; 
                 
@@ -50,9 +50,13 @@ if(isset($_POST['submit']) ){    // from productDetail.php
         $_SESSION['cart'][$p_id] = $prd_array;
 
     }
-
+    
     calc_total();
 
+    $urlget = isset($_GET['tab'])?"?tab=".$_GET['tab']:"";
+    
+    header('Location: ' . $_SERVER['PHP_SELF'].$urlget);
+    location.reload();
 
 } else if (isset($_POST['remove_btn'])){
 
@@ -75,15 +79,10 @@ if(isset($_POST['submit']) ){    // from productDetail.php
     calc_total();
 
 
-} else if (!isset($_SESSION['cart'])) {
+} else if (!isset($_SESSION['cart']) && !isset($_SESSION["loggedIn"])){
 
     echo '<script>alert("Cart is empty");</script>';
-    // calc_total();
     header('location: shop.php');      
-
-    /*  it may create an infinite loop, 
-        1) to add exit(); after redirection code.
-        2) to avoid a double 'include()' ==> require_once('header.php'); ? */
 
 }
 

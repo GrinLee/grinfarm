@@ -1233,11 +1233,12 @@ hr.side{
 
 .box-minmax {
     margin-top: 6px;
-    width: 146px;
-        display: flex;
-        justify-content: space-between;
-        font-size: 15px;
-        color: var(--grey) ;
+    width: 136px;
+    margin-left: -8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: var(--grey) ;
 }
 .box-minmax span:first-child {
     margin-left: 12px;
@@ -1248,20 +1249,15 @@ hr.side{
     transform-origin: center center;
     display: block;
     width: 98px;
-    height: 68px;
+    height: 45px;
     background: transparent;
     border-radius: 50%;
-    line-height: 30px;
     text-align: center;
-    font-weight: bold;
-    padding-top: 43px;
+    padding-top: 25px;
     box-sizing: border-box;
-    margin-top: 7px;
     margin-left: -40px;
-    left: attr(value);
     color: var(--grey) ;
     font-style: normal;
-    font-weight: normal;
     line-height: normal;
     font-size: 24px;
 }
@@ -1274,7 +1270,7 @@ hr.side{
 }
 
 .range-slider {
-    margin-top: -5vh;
+    margin-top: -10vh;
 }
     
 .rs-range {

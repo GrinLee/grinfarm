@@ -76,11 +76,10 @@ if(isset($_GET['sub'])){
     unset($_COOKIE['subchecked']); 
 }
 
-
-
 $chked = 0;
 
 if(isset($_COOKIE['subchecked'])){
+
     $chked = $_COOKIE['subchecked'];
     unset($_COOKIE['subchecked']); 
     // echo "<script>$('#subinput').prop('checked', false);</script>";
