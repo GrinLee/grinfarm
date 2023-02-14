@@ -64,7 +64,7 @@ $html .= '<div class="getInfo" display="block">
                     <select class="form-input" name="country" required >
                         <option value="">Select Country</option>
                         <option value="CANADA" selected>Canada</option>
-                        <option value="KOREA">Korean</option>
+                        <option value="KOREA">Korea</option>
                     </select>
                 </div>
                 <div class="form-div split">
@@ -145,9 +145,12 @@ $(document).ready(function(){
             }
     });
 
+
+
     $('.address_cancel').click(function(){
         window.history.back();
     });
+
 
 
     $('.buy_btn.check').click(function(e){
@@ -173,8 +176,6 @@ $(document).ready(function(){
 
             e.preventDefault();
 
-            let postData = $('#login-form').serialize();
-            
             $.ajax({
                 url : 'ajax/getReview.php',
                 type : 'POST',

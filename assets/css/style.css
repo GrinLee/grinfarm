@@ -1783,6 +1783,16 @@ hr.mx-auto{
 
 /* Cart ------------------------------- */
 
+.halfAlert{ 
+    display:none; 
+    text-align: center;
+    color: var(--brow);
+    font-size: 18px;
+    margin:-30px 0 0;
+    padding:0;
+}
+.halfAlert.active{ display:block; }
+
 .cart_container{
     margin: 3%;
 }

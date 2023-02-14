@@ -42,7 +42,7 @@
                     </div>  <!-- star -->
                     <h5 class="p-name"><?php echo $rowK['product_name']; ?></h5>
                     <h4 class="p-price">$<?php echo $rowK['product_price']; ?></h4>
-                    <a  href="productDetail.php?product_id=<?php echo $rowK['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+                    <a href="productDetail.php?product_id=<?php echo $rowK['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
                 </div>
 
         <?php   }  ?>   

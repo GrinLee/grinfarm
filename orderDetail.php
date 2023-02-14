@@ -7,6 +7,8 @@ require_once('includes/classes/GetOrders.php');
 
 if(isset($_SESSION['order_id'])){   
 
+    unset($_SESSION['cart'], $_SESSION['total'], $_SESSION['qty']);
+
     $preview = new GetProduct($con);
     $qry = $preview->getOrderedProduct($_SESSION['order_id']); 
     

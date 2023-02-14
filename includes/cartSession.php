@@ -24,12 +24,12 @@ if(isset($_POST['submit']) ){    // from productDetail.php
                 
 
         } else {
-            echo '<script>alert("Products was alreay to cart");</script>';
+            echo '<script>alert("This product is alreay in cart");</script>';
             echo '<script>window.location="cart.php";</script>';
         }
 
 
-    } else {    // no session cart --------------------
+    } else {    // no cart session  --------------------
 
         $p_id = $_POST['product_id'];
         $p_name = $_POST['product_name'];
@@ -109,3 +109,4 @@ function calc_total(){
 
 
 ?>
+

@@ -6,15 +6,13 @@ class GetOrders {
     public static function getOrderDetail($row, $con){
 
 /* 
-$order_id = $row['order_id'];       $order_cost = $row['order_cost'];
-$user_id = $row['user_id'];         $address2 = $row['address2'];    
-$address = $row['address'];         $phone = $row['phone']; 
-$country = $row['country'];         $city = $row['city'];
-$prov = $row['prov'];               $postal = $row['postal'];   
-$item_id = $row['item_id'];         $card_id = $row['card_id'];
+$order_id = $row['order_id'];    $order_cost = $row['order_cost']; $user_id = $row['user_id'];         
+$address2 = $row['address2'];    $address = $row['address'];       $phone = $row['phone']; 
+$country = $row['country'];      $city = $row['city'];             $prov = $row['prov'];            
+$postal = $row['postal'];        $item_id = $row['item_id'];       $card_id = $row['card_id'];
 $saveAddress = $row['saveAddress']; 
-
 */
+
         $order_status = $row['order_status'];   $username = $row['username'];
         $date = $row['order_date'];             
         $product_id = $row['product_id'];       $order_myId = $row['order_myId'];   

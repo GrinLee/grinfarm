@@ -1,5 +1,6 @@
+<?php require_once("includes/cartSession.php"); ?>
 
-<div class="sideContainer cart mt-5 pb-5">
+        <div class="sideContainer cart mt-5 pb-5">
             
             <div class="side arr py-5">
                  
@@ -21,7 +22,15 @@
                     <p class="p-name side "><?php echo $rowR['product_name']; ?></p>
                     <p class="p-desc side "><?php echo $rowR['product_thumb_desc']; ?></p>
                     <p class="p-price side ">$<?php echo $rowR['product_price']; ?></p>
-                    <button><a href="productDetail.php">Add to Cart</a></button>
+                    <form method="POST" id="addCartform">  
+                        <input type="hidden" name="product_id" value="<?php echo $rowR['product_id']; ?>"/>
+                        <input type="hidden" name="product_image1" value="<?php echo $rowR['product_image1']; ?>"/>
+                        <input type="hidden" name="product_name" value="<?php echo $rowR['product_name']; ?>"/>
+                        <input type="hidden" name="product_price" value="<?php echo $rowR['product_price']; ?>"/>
+                        <input type="hidden" name="product_desc" value="<?php echo $rowR['product_thumb_desc']; ?>"/>
+                        <input type="hidden" name="product_qty" value="1"/>
+                        <button class="buy-btn" type="submit" name="submit">Add to Cart</a></button>
+                    </form>
                 </div>
             </div>
 
@@ -29,3 +38,16 @@
             </div>
 
         </div> 
+
+<script>
+$(document).ready(function(){
+
+    $('#addcartform').submit(function(e){
+        let addData = $('#addcartform').serialize();
+        $.post("cartSession.php", addData, function(){ /* location.reload(true); */ });
+        e.preventDefault();
+    });
+
+});
+
+</script>
