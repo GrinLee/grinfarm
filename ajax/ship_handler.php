@@ -32,7 +32,7 @@
           $country = $_POST['country'];
           $order_cost = $_SESSION['total']; 
           $order_status = 'on_hold'; 
-          $saveAddress = $_POST['saveAddress'];
+          $saveAddress = isset($_POST['saveAddress'])?1:0;
 
           $order_id = $account->insertOrders($order_cost, $order_status, $user_id, $card_id, $firstName, $lastName, $phone, $address, $address2, $country, $prov, $city, $postal, $saveAddress);
           
