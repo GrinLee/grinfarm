@@ -429,9 +429,24 @@ aside p{
     display: grid;
     grid-template-columns: 220px 30% calc(91% - 220px - 30%);
     grid-template-rows: 1fr 1fr;
-    grid-gap: 5px 4%;
+    grid-gap: 5px 3%;
     position: relative;
 }
+
+#gall_M{ 
+    grid-column: 2 / 3;  grid-row: 1 / -1; 
+    padding-left: 10%;
+    padding-right: 1%;
+    border-left: 1px solid var(--bord);
+}
+#gall_M .sm_ct{
+    height: 430px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+
+
 #gall_L{ 
     grid-column: 1 / 2;  grid-row: 1 / -1; 
 }
@@ -474,16 +489,7 @@ aside p{
     border-bottom: 1px solid var(--bord);
 }
 
-#gall_M{ 
-    grid-column: 2 / 3;  grid-row: 1 / -1; 
-    padding-left: 4vw;
-    border-left: 1px solid var(--bord);
-}
-#gall_M .sm_ct{
-    height: 430px;
-    overflow: hidden;
-    margin-bottom: 0;
-}
+
 .gall_m_img{
     height: 385px;
     margin:0 0 35px 0;
