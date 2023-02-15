@@ -218,7 +218,7 @@ $(document).ready(function(){
         var isvalid = $("#login-form").valid();
         if (isvalid) {
             e.preventDefault();
-            // alert(getvalues("login-form"));
+            alert(getvalues("login-form"));
             popupcheckcard();
             $('.buy_btn.check').attr("cardhalf", "yes");
         }
