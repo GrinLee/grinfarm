@@ -250,12 +250,10 @@ $(document).ready(function(){
         } else {
                 e.preventDefault();
 
-                let postData = $('#login-form').serialize();
-
                 $.ajax({
                     url : 'ajax/ship_handler.php',
                     type : 'POST',
-                    data : postData,
+                    data : $("#login-form").serialize(),
                     success : function(data){
                         if(data){               
                             console.log(data);
