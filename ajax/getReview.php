@@ -219,9 +219,10 @@ $(document).ready(function(){
         if (isvalid) {
             e.preventDefault();
 
-            // alert(getvalues("login-form"));
+                // alert(getvalues("login-form"));
             
-            popupcheckcard();
+            checkcardMsg();
+            
             $('.buy_btn.check').attr("cardhalf", "yes");
         }
     });
@@ -232,8 +233,10 @@ $(document).ready(function(){
     $('.buy_btn.check').click(function(e){
 
         $(".halfAlert").empty();
-
+        
         if(!e.target.hasAttribute("cardhalf")){
+
+            e.preventDefault();
 
             let txt ="<p>Please finish filling out the Payment process</p>";
             $('.halfAlert').append(txt);
@@ -243,19 +246,22 @@ $(document).ready(function(){
             $('.halfAlert').removeClass('active');
             }, 2000);
 
-            e.preventDefault();
 
         } else {
-
                 e.preventDefault();
+
                 let postData = $('#login-form').serialize();
 
+                console.log(postData);
+                
                 $.ajax({
                     url : 'ajax/ship_handler.php',
                     type : 'POST',
                     data : postData,
                     success : function(data){
                         if(data){
+                            console.log(data);
+                            
                             window.location.href = "orderDetail.php"; 
                         }
                         return false;
@@ -282,7 +288,7 @@ $(document).ready(function(){
 
 }); 
 
-function popupcheckcard(){
+function checkcardMsg(){
     $('.checkCard').addClass('active'); 
     $('.buy_btn.subm').addClass('hidden'); 
 }
