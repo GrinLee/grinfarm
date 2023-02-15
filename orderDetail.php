@@ -13,8 +13,8 @@ if(isset($_SESSION['order_id'])){
     $qry = $preview->getOrderedProduct($_SESSION['order_id']); 
     
 } else {
-
-    header('location: index.php');
+    var_dump("no orderid");
+    // header('location: index.php');
     exit;
 }
 

@@ -144,9 +144,7 @@ class Account {
             $query2->bindValue(":o_id", $new_o_id);
 
             if($query2->execute()){
-                return $uniq_id;
-                // return $this->newid;
-
+                return $this->newid;
             } else {
                 return false;
             }
@@ -179,7 +177,7 @@ class Account {
                     return $this->newid;
                 } 
             } else {
-                return false;
+                return true;
             }
         }
         return false;

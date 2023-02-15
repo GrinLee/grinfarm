@@ -37,6 +37,7 @@
 
           $order_id = $account->insertOrders($order_cost, $order_status, $user_id, $card_id, $firstName, $lastName, $phone, $address, $address2, $country, $prov, $city, $postal, $saveAddress);
           
+          var_dump();
           if($order_id != null){
                $_SESSION['order_id'] = $order_id;
           }
@@ -50,7 +51,7 @@
                }
           }
           if(!empty($ordArr)){
-               echo $order_id;
+               echo true;
           } else {
                echo false;
           }
