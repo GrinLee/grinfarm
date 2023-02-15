@@ -96,8 +96,10 @@ $html .= '<div class="getInfo" display="block">
                 </div>
             </div>
             <div class="">   
-                <input type="hidden" name="saveAddress" value="0" /> 
+
+                <input type="hidden" name="saveAddress" value="0" />
                 <input type="checkbox" name="saveAddress" value="1" />
+
                 <label for="vehicle1"> Set as default shipping address</label><br>
             </div>
             <div class="checkout_container">
