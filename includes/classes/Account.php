@@ -154,9 +154,9 @@ class Account {
 
     public function checkCard ($u_i, $cv, $ex, $cn, $pn, $sc) {
         
-        $this->validateCvv($cv);
-        $this->validateCardNumber($cn);
-        $this->validateExpire($ex);
+        // $this->validateCvv($cv);
+        // $this->validateCardNumber($cn);
+        // $this->validateExpire($ex);
         
         if(empty($this->errorArray)) {
 
