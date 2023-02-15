@@ -1,6 +1,5 @@
 <?php
      require_once("../includes/config.php");
-     require_once("../includes/classes/FormSanitizer.php");
      require_once("../includes/classes/Account.php");
      
      $account = new Account($con);
@@ -12,23 +11,23 @@
 
           /* card */
           $saveCard = $_POST['saveCard']; 
-          $cvv = FormSanitizer::sanitizeFormCVV($_POST["cvv"]);
-          $expire = FormSanitizer::sanitizeFormExpire($_POST["expire"]);
-          $cardNumber = FormSanitizer::sanitizeFormCardNumber($_POST["cardNumber"]);
-          $printName = FormSanitizer::sanitizeFormPrintName($_POST["printName"]);
+          $cvv = $_POST["cvv"];
+          $expire = $_POST["expire"];
+          $cardNumber = $_POST["cardNumber"];
+          $printName = $_POST["printName"];
 
           $card_id = $account->checkCard($user_id, $cvv, $expire, $cardNumber, $printName, $saveCard);
 
 
           
           /* order */
-          $firstName = FormSanitizer::sanitizeFormString($_POST['firstName']);
-          $lastName = FormSanitizer::sanitizeFormString($_POST['lastName']);
-          $phone = FormSanitizer::sanitizeFormPhone($_POST['phone']);
-          $address = FormSanitizer::sanitizeFormString($_POST['address']);
-          $address2 = FormSanitizer::sanitizeFormString($_POST['address2']);
-          $city = FormSanitizer::sanitizeFormString($_POST['city']);
-          $postal = FormSanitizer::sanitizeFormPostal($_POST['postal']);
+          $firstName = $_POST['firstName'];
+          $lastName = $_POST['lastName'];
+          $phone = $_POST['phone'];
+          $address = $_POST['address'];
+          $address2 = $_POST['address2'];
+          $city = $_POST['city'];
+          $postal = $_POST['postal'];
           $prov = $_POST['prov'];
           $country = $_POST['country'];
           $order_cost = $_SESSION['total']; 
@@ -37,7 +36,6 @@
 
           $order_id = $account->insertOrders($order_cost, $order_status, $user_id, $card_id, $firstName, $lastName, $phone, $address, $address2, $country, $prov, $city, $postal, $saveAddress);
           
-          var_dump();
           if($order_id != null){
                $_SESSION['order_id'] = $order_id;
           }
