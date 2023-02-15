@@ -179,7 +179,7 @@ class Account {
                     return $this->newid;
                 } 
             } else {
-                return true;
+                return false;
             }
         }
         return false;

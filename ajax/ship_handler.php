@@ -50,7 +50,7 @@
                }
           }
           if(!empty($ordArr)){
-               echo true;
+               echo $order_id;
           } else {
                echo false;
           }
