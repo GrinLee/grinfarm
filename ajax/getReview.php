@@ -33,7 +33,7 @@ if(isset($_POST["username"])){
     $prov = $_POST['prov'];
     $city = $_POST['city'];
     $postal = $_POST['postal'];
-    $saveAddress = isset($_POST['saveAddress'])?1:0;
+    $saveAddress = $_POST['saveAddress'];
 
     $html = '';
     $html .='<div class="cart_title mt-5">
