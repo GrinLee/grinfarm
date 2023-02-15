@@ -12,7 +12,7 @@ if(isset($_GET['product_id'])){
     $query->execute();
 
 } else {
-    header('location: index.php');
+    header('Location: index.php');
 }
 
 

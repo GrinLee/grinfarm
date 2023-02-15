@@ -26,7 +26,7 @@ if(isset($_POST['submit']) ){    // from productDetail.php
 
         } else {
             echo '<script>alert("This product is alreay in cart");</script>';
-            echo '<script>window.location="cart.php";</script>';
+            echo '<script>window.Location="cart.php";</script>';
         }
 
 
@@ -76,7 +76,7 @@ if(isset($_POST['submit']) ){    // from productDetail.php
 } else if (!isset($_SESSION['cart']) && !isset($_SESSION["loggedIn"])){
 
     echo '<script>alert("Cart is empty");</script>';
-    header('location: shop.php');      
+    header('Location: shop.php');      
 
 }
 

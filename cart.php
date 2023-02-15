@@ -21,7 +21,7 @@ if(isset($_POST["submit_btn"])) {
         $_SESSION["user_id"] = $sqlData['user_id'];
         $_SESSION["loggedIn"] = $username;
         header('Location:  ' . $_SERVER['PHP_SELF']);
-        location.reload();
+        Location.reload();
     } else {
         echo "<script> popupfunc(); </script>";
     }

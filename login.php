@@ -6,7 +6,7 @@ require_once("includes/classes/Constants.php");
 require_once("includes/classes/Account.php");
 
 if(isset($_SESSION['loggedIn'])){
-    header('location: account.php');
+    header('Location: account.php');
     exit;          
 }
 

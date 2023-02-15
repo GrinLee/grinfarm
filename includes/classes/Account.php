@@ -145,13 +145,10 @@ class Account {
 
             if($query2->execute()){
                 return $this->newid;
-            } else {
-                return false;
-            }
-
-        } else {
-            return false;
-        }
+            } 
+        } 
+        return false;
+        
     }
 
 
@@ -176,6 +173,7 @@ class Account {
                     $this->newid = $this->con->lastInsertId();
                     return $this->newid;
                 } 
+                
             } else {
                 return true;
             }

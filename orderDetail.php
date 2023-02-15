@@ -14,7 +14,7 @@ if(isset($_SESSION['order_id'])){
     
 } else {
     var_dump("no orderid");
-    // header('location: index.php');
+    // header('Location: index.php');
     exit;
 }
 

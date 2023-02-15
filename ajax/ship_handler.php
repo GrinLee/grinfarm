@@ -12,22 +12,22 @@
 
           /* card */
           $saveCard = $_POST['saveCard']; 
-          $cvv = FormSanitizer::sanitizeFormCVV($_POST["cvv"]);
-          $expire = FormSanitizer::sanitizeFormExpire($_POST["expire"]);
-          $cardNumber = FormSanitizer::sanitizeFormCardNumber($_POST["cardNumber"]);
-          $printName = FormSanitizer::sanitizeFormPrintName($_POST["printName"]);
+          $cvv = $_POST["cvv"];
+          $expire = $_POST["expire"];
+          $cardNumber = $_POST["cardNumber"];
+          $printName = $_POST["printName"];
 
           $card_id = $account->checkCard($user_id, $cvv, $expire, $cardNumber, $printName, $saveCard);
 
 
           /* order */
-          $firstName = FormSanitizer::sanitizeFormString($_POST['firstName']);
-          $lastName = FormSanitizer::sanitizeFormString($_POST['lastName']);
-          $phone = FormSanitizer::sanitizeFormPhone($_POST['phone']);
-          $address = FormSanitizer::sanitizeFormString($_POST['address']);
-          $address2 = FormSanitizer::sanitizeFormString($_POST['address2']);
-          $city = FormSanitizer::sanitizeFormString($_POST['city']);
-          $postal = FormSanitizer::sanitizeFormPostal($_POST['postal']);
+          $firstName = $_POST['firstName'];
+          $lastName = $_POST['lastName'];
+          $phone = $_POST['phone'];
+          $address = $_POST['address'];
+          $address2 = $_POST['address2'];
+          $city = $_POST['city'];
+          $postal = $_POST['postal'];
           $prov = $_POST['prov'];
           $country = $_POST['country'];
           $order_cost = $_SESSION['total']; 
