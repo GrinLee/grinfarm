@@ -1,6 +1,7 @@
 <?php
      require_once("../includes/config.php");
      require_once("../includes/classes/Account.php");
+     require_once("../includes/classes/FormSanitizer.php");
      
      $account = new Account($con);
 
@@ -36,7 +37,7 @@
           $order_id = $account->insertOrders($order_cost, $order_status, $user_id, $card_id, $firstName, $lastName, $phone, $address, $address2, $country, $prov, $city, $postal, $saveAddress);
           
           var_dump($order_id);
-          
+
           if($order_id != null){
                $_SESSION['order_id'] = $order_id;
           }
