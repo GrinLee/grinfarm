@@ -257,7 +257,6 @@ $(document).ready(function(){
                     success : function(data){
                         if(data){               
                             console.log(data);
-                            
                             window.location.href = "orderDetail.php"; 
                         }
                         return false;
