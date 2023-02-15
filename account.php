@@ -130,7 +130,8 @@ function getInputValue($in) {
                         <?php
                             $html ="";
                             if(!empty($row = $qry->fetch(PDO::FETCH_ASSOC))){
-                                while($row = $qry->fetch(PDO::FETCH_ASSOC)){    
+                                
+                                while($row = $qry->fetch(PDO::FETCH_ASSOC)){ 
                                         $cell = GetOrders::getOrderDetail($row, $con);
                                         $html .= $cell;
                                     }

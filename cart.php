@@ -87,10 +87,12 @@ function getInputValue($input) {
                                     <h5>$<?php echo $s_row['p_qty'] * $s_row['p_price'];?></h5>
 
                                     <div class="item_post">
+
                                         <form method='POST'>
                                             <input type="hidden" name="wishlist" value="<?php echo $s_row['p_id']?>"/>
                                             <input type="submit" class="form_btn" value="Move to wish list &nbsp; |"/>
                                         </form>
+                                        
                                         <form method="POST">
                                             <input type="hidden" name="product_id" value="<?php echo $s_row['p_id']?>"/>
                                             <input type="submit" class="form_btn" style="font-family: FontAwesome" name="remove_btn" value="&nbsp;&nbsp; &#xf829;" />

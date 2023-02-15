@@ -168,16 +168,15 @@ class GetProduct{
 
     public function getOrderLists($u_id){
 
-        $this->qry = $this->con->prepare("SELECT * FROM orders od
-                                        LEFT JOIN order_items oi 
-                                        ON od.order_id = oi.order_id
-                                        WHERE 1 = 0 
+        $this->qry = $this->con->prepare("SELECT * FROM order_items oi
+                                        LEFT JOIN orders od 
+                                        ON oi.order_id = od.order_id
+                                        WHERE oi.user_id = :u_id 
                                             UNION ALL
-                                            SELECT * FROM orders od
-                                            RIGHT JOIN order_items oi
-                                            ON od.order_id = oi.order_id
-                                            WHERE od.user_id = :u_id 
-                                            GROUP BY od.order_id");
+                                            SELECT * FROM order_items oi
+                                            RIGHT JOIN orders od 
+                                            ON oi.order_id = od.order_id
+                                            WHERE oi.user_id = null");
 
 
         $this->qry->bindValue(":u_id", $u_id);

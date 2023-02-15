@@ -3,7 +3,7 @@
 require_once("includes/config.php");
 require_once('includes/classes/GetProduct.php');
 require_once('includes/classes/GetOrders.php');
-
+require_once("includes/cartSession.php"); 
 
 if(isset($_SESSION['order_id'])){   
 

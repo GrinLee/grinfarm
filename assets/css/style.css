@@ -712,7 +712,7 @@ section .form-div{
 }
 .main_cont{
     display: flex;
-    margin: 55px 1% 25px;
+    margin: 55px 1% 100px;
 }
 .order_hr{
     width: 100%;

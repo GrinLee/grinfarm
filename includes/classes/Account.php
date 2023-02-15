@@ -97,10 +97,10 @@ class Account {
         }
     }
 
-    public function insertOrders($o_c, $o_s, $u_i, $c_i, $fn, $ln, $ph, $ad, $ad2, $co, $pr, $ci, $po, $sa) {
+    public function insertOrders($o_c, $o_s, $u_i, $c_i, $fn, $ln, $ph, $ad, $ad2, $co, $pr, $ct, $po, $sa) {
 
         $query = $this->con->prepare("INSERT INTO orders (order_cost, order_status, user_id, card_id, username, phone, address, address2, country, prov, city, postal, saveAddress)
-                                        VALUES (:o_c, :o_s, :u_i, :c_i, :un, :ph, :ad, :ad2, :co, :pr, :ci, :po, :sa)");
+                                        VALUES (:o_c, :o_s, :u_i, :c_i, :un, :ph, :ad, :ad2, :co, :pr, :ct, :po, :sa)");
         $query->bindValue(":o_c", $o_c);
         $query->bindValue(":o_s", $o_s);
         $query->bindValue(":u_i", $u_i);
@@ -113,7 +113,7 @@ class Account {
         $query->bindValue(":co", $co);
         $query->bindValue(":pr", $pr);
         
-        $query->bindValue(":ci", $ci);
+        $query->bindValue(":ct", $ct);
         $query->bindValue(":po", $po);
         $query->bindValue(":sa", $sa);
 
@@ -128,7 +128,7 @@ class Account {
                 for ($i = 0; $i < 3; $i++) {
                     $randomString .= $characters[rand(0, $charactersLength - 1)];
                 }
-                $randomNumber = rand(10,99);
+                $randomNumber = rand(100,999);
                 $my_id = $randomNumber.'-'.$nid.$randomString;
                                
                 return $my_id;

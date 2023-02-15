@@ -20,9 +20,11 @@ $saveAddress = $row['saveAddress'];
         $product_price = $row['product_price']; $product_quantity = $row['product_quantity']; 
 
         $total = $product_price * $product_quantity;
-        $getP = new GetProduct($con);
-        $qry = $getP->getProduct($product_id);
-        $res = $qry->fetch(PDO::FETCH_ASSOC);  
+
+                $getP = new GetProduct($con);
+                $qry = $getP->getProduct($product_id);
+                $res = $qry->fetch(PDO::FETCH_ASSOC);  
+                
         $product_desc = $res['product_description'];    
         $product_thumb = $res['product_thumb_desc'];   
 

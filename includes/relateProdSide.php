@@ -42,17 +42,3 @@ require_once("includes/cartSession.php");
             </div>
 
         </div> 
-
-<script>
-$(document).ready(function(){
-
-    $('#addcartform').submit(function(e){
-        e.preventDefault();
-        let addData = $('#addcartform').serialize();
-        $.post("cartSession.php", addData, function(){ /* location.reload(true); */ });
-        
-    });
-
-});
-
-</script>

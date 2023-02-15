@@ -5,6 +5,7 @@ if(isset($_POST['submit']) ){    // from productDetail.php
 
     if(isset($_SESSION['cart'])){
 
+       
         $s_id_arr = array_column($_SESSION['cart'], "p_id"); 
         
         if( !in_array($_POST['product_id'], $s_id_arr)){
@@ -31,32 +32,25 @@ if(isset($_POST['submit']) ){    // from productDetail.php
 
     } else {    // no cart session  --------------------
 
+        var_dump("no cart here");
+
         $p_id = $_POST['product_id'];
-        $p_name = $_POST['product_name'];
-        $p_desc = $_POST['product_desc'];
-        $p_price = $_POST['product_price'];
-        $p_image = $_POST['product_image1'];
-        $p_qty = $_POST['product_qty'];
 
         $prd_array = array(
-            'p_id' => $p_id,
-            'p_name' => $p_name,
-            'p_desc' => $p_desc,
-            'p_price' => $p_price,
-            'p_image' => $p_image,
-            'p_qty' => $p_qty
-        );
+            'p_id' => $_POST['product_id'],
+            'p_name' => $_POST['product_name'],
+            'p_desc' => $_POST['product_desc'],
+            'p_price' => $_POST['product_price'],
+            'p_image' => $_POST['product_image1'],
+            'p_qty' => $_POST['product_qty']
+        );  
 
         $_SESSION['cart'][$p_id] = $prd_array;
 
     }
     
     calc_total();
-
-    $urlget = isset($_GET['tab'])?"?tab=".$_GET['tab']:"";
-    
-    header('Location: ' . $_SERVER['PHP_SELF'].$urlget);
-    location.reload();
+    updateSess();
 
 } else if (isset($_POST['remove_btn'])){
 
@@ -84,6 +78,13 @@ if(isset($_POST['submit']) ){    // from productDetail.php
     echo '<script>alert("Cart is empty");</script>';
     header('location: shop.php');      
 
+}
+
+function updateSess(){
+
+    $urlget = isset($_GET['tab'])?"?tab=".$_GET['tab']:"";
+    header('Location: ' . $_SERVER['PHP_SELF'].$urlget);
+    location.reload();
 }
 
 function calc_total(){
