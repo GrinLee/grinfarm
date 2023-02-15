@@ -26,7 +26,7 @@ if(isset($_POST['submit']) ){    // from productDetail.php
 
         } else {
             echo '<script>alert("This product is alreay in cart");</script>';
-            echo '<script>window.Location="cart.php";</script>';
+            echo '<script>window.location="cart.php";</script>';
         }
 
 
@@ -97,9 +97,6 @@ function calc_total(){
             $total_price = $total_price + ( $value['p_qty'] * $value['p_price'] );
             $total_qty = $total_qty + $value['p_qty']; }
 
-        // while( $row = $_SESSION['cart'][$p_id]->fetch_assoc()){
-        //     $total_price = $total + ($row['p_qty'] * $row['p_price']);
-        //     $total_qty = $total_qty + $row['p_qty']; }
 
     }
 

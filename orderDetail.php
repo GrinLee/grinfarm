@@ -13,15 +13,14 @@ if(isset($_SESSION['order_id'])){
     $qry = $preview->getOrderedProduct($_SESSION['order_id']); 
     
 } else {
-    var_dump("no orderid");
-    // header('Location: index.php');
+    // var_dump("no orderid");
+    header('Location: index.php');
     exit;
 }
 
 function calc_order_total($od){
 
     $total = 0;
-    // while($row = $od->fetch_assoc()){     
     foreach($od as $row){     
 
         $p_price = $row['product_price'];

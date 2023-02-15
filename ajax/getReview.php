@@ -184,7 +184,7 @@ $(document).ready(function(){
     $("#login-form").validate(
         {
             rules: {
-                cardNumber: { rangelength: [1, 1], digits:true  },
+                cardNumber: { rangelength: [12, 16], digits:true  },
                 cvv:        { rangelength: [3, 3], digits:true  },
                 expire:     { rangelength: [4, 4], digits:true  },
                 printName:  { minlength: 2 }

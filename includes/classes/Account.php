@@ -83,12 +83,12 @@ class Account {
 
 
     public function orders($fn, $ln, $ph, $ad, $ad2, $co, $pr, $ci, $po) {
-        $this->validateFirstName($fn);
-        $this->validateLastName($ln);
-        $this->validatePhone($ph);
-        $this->validateAddress($ad);
-        $this->validateCity($ci);
-        $this->validatePostal($po);
+        // $this->validateFirstName($fn);
+        // $this->validateLastName($ln);
+        // $this->validatePhone($ph);
+        // $this->validateAddress($ad);
+        // $this->validateCity($ci);
+        // $this->validatePostal($po);
 
         if(empty($this->errorArray)) {
             return true;
