@@ -1,5 +1,6 @@
 <?php
-require_once("includes/classes/GetProduct.php");
+    require_once("../includes/config.php");
+    require_once("includes/classes/GetProduct.php");
 
 class GetOrders {
 
