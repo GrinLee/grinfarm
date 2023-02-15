@@ -252,14 +252,12 @@ $(document).ready(function(){
 
                 let postData = $('#login-form').serialize();
 
-                console.log(postData);
-                
                 $.ajax({
                     url : 'ajax/ship_handler.php',
                     type : 'POST',
                     data : postData,
                     success : function(data){
-                        if(data){
+                        if(data){               
                             console.log(data);
                             
                             window.location.href = "orderDetail.php"; 
