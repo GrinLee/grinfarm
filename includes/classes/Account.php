@@ -119,7 +119,7 @@ class Account {
 
         if($query->execute()){
             $this->newid = $this->con->lastInsertId();
-            $new_id = $this->newid;
+            $new_o_id = $this->newid;
             
             function getRandomChar($nid) {
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -129,19 +129,19 @@ class Account {
                     $randomString .= $characters[rand(0, $charactersLength - 1)];
                 }
                 $randomNumber = rand(100,999);
-                $my_id = $randomNumber.'-'.$nid.$randomString;
+                $uniqid = $randomNumber.'-'.$nid.$randomString;
                                
-                return $my_id;
+                return $uniqid;
             }
 
-            $my_id = getRandomChar($new_id);
+            $uniq_id = getRandomChar($new_o_id);
 
             $query2 = $this->con->prepare("UPDATE orders 
                                             SET order_myId = :o_mi
                                             WHERE order_id = :o_id");
                                             
-            $query2->bindValue(":o_mi", $my_id);
-            $query2->bindValue(":o_id", $new_id);
+            $query2->bindValue(":o_mi", $uniq_id);
+            $query2->bindValue(":o_id", $new_o_id);
 
             if($query2->execute()){
                 return $this->newid;
