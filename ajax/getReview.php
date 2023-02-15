@@ -113,7 +113,7 @@ if(isset($_POST["username"])){
                     <div class="form-div">
                         '.$account->getError(Constants::$cardNumberLength).'
                         <label>Credit Card Number</label>
-                        <input type="text" class="form-input" value="'.getInputValue("cardNumber").'" name="cardNumber" placeholder="12 Digit Credit Card Number" required />
+                        <input type="text" class="form-input" value="'.getInputValue("cardNumber").'" name="cardNumber" placeholder="4 Digit Credit Card Number" required />
                     </div>
 
                     <div class="form-div divided">              
