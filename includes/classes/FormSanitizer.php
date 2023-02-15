@@ -45,22 +45,24 @@ class FormSanitizer {
         return $inputText;
     }
 
-
     public static function sanitizeFormCardNumber($inputText) {
         $inputText = strip_tags($inputText);
         $inputText = str_replace(" ", "", $inputText);
         return $inputText;
     }
+
     public static function sanitizeFormCVV($inputText) {
         $inputText = strip_tags($inputText);
         $inputText = str_replace(" ", "", $inputText);
         return $inputText;
     }
+
     public static function sanitizeFormExpire($inputText) {
         $inputText = strip_tags($inputText);
         $inputText = str_replace(" ", "", $inputText);
         return $inputText;
     }
+    
     public static function sanitizeFormPrintName($inputText) {
         $inputText = strip_tags($inputText);
         return $inputText;
