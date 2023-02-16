@@ -729,21 +729,19 @@ input[id^="input_"],
 .hiddendiv {display: none; }
 
 
+.input_:has( > input:checked){
+    padding: 10px 0 25px 5px!important;
+}
+
 .input_.ad input:checked ~ .hiddendiv.div_ad,
 .input_.se input:checked ~ .hiddendiv.div_se, 
 .input_.pw input:checked ~ .hiddendiv.div_pw {
     display: block; 
     width: 250px;
+    margin-top: 25px;
 }
 .input_.ad{
     border-top: var(--bord) solid 1px;
-}
-.div_pw{
-    margin-top: 30px;
-}
-    
-.div_se{
-    margin-top: 25px;
 }
     
 .input_ > label{
@@ -2600,16 +2598,13 @@ footer .fa:hover {
         .input_.pw input:checked ~ .hiddendiv.div_pw {
             display: block; 
             width: 370px;
+            padding: 10px;
         }
 
         .div_pw{
             width: 265px;
-            padding: 10px;
         }
         
-        .div_se{
-            padding: 10px;
-        }
         
 
         .left_sec{
@@ -3400,18 +3395,15 @@ footer .fa:hover {
                     .input_.se input:checked ~ .hiddendiv.div_se, 
                     .input_.pw input:checked ~ .hiddendiv.div_pw {
                         width: 320px;
+                        padding: 10px;
                     }
                     #login-btn-pw, #login-btn-se{
                         height: 35px;
                     }
                     .div_pw{
                         width: 265px;
-                        padding: 10px;
                     }
                     
-                    .div_se{
-                        padding: 10px;
-                    }
                     
                     .main_cont{
                         display:flex;

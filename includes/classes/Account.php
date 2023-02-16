@@ -5,6 +5,7 @@ class Account {
     private $errorArray = array();
     private $sqlData = array();
     private $newid;
+    private $o_l_id;
 
     public function __construct($con) {
         $this->con = $con;
@@ -49,7 +50,10 @@ class Account {
         return false;
     }
 
+
+
     public function register($fn, $ln, $un, $em, $pw, $pw2) {
+        
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
         $this->validateUsername($un);
@@ -81,8 +85,38 @@ class Account {
         }
     }
 
+    public function updateAccAddress($u_i, $ph, $ad, $ad2, $ct, $po, $pv, $cn){
+
+        $query = $this->con->prepare("UPDATE orders SET phone=:ph,
+                                                        address=:ad,
+                                                        address2=:ad2,
+                                                        city=:ct,
+                                                        postal=:po,  
+                                                        prov=:pv,
+                                                        country=:cn
+                                                    WHERE user_id=:u_id 
+                                                    ORDER BY order_id DESC
+                                                    LIMIT 1");
+        $query->bindValue(":u_id", $u_i);
+        $query->bindValue(":ph", $ph);
+        $query->bindValue(":ad", $ad);
+        $query->bindValue(":ad2", $ad2);
+        $query->bindValue(":ct", $ct);
+        $query->bindValue(":po", $po);
+        $query->bindValue(":pv", $pv);
+        $query->bindValue(":cn", $cn);
+
+        if($query->execute()){
+            return true;
+        } 
+
+        return false;
+    
+    }
+
 
     public function orders($fn, $ln, $ph, $ad, $ad2, $co, $pr, $ci, $po) {
+
         // $this->validateFirstName($fn);
         // $this->validateLastName($ln);
         // $this->validatePhone($ph);
@@ -221,16 +255,17 @@ class Account {
 
 
 
-    public function updatePassword($u_i, $un, $oldPw, $pw, $pw2) {
-        $this->validateOldPassword($oldPw, $un);
+    public function updatePassword($u_i, $fn, $ln, $oldPw, $pw, $pw2) {
+        $this->validateOldPassword($oldPw, $u_i);
         $this->validatePasswords($pw, $pw2);
 
         if(empty($this->errorArray)) {
-            $query = $this->con->prepare("UPDATE users SET password=:pw, username=:un WHERE user_id=:u_id");
+            $query = $this->con->prepare("UPDATE users SET password=:pw, firstName=:fn, lastName=:ln WHERE user_id=:u_id");
             $pw = hash("sha512", $pw);
             $query->bindValue(":pw", $pw);
             $query->bindValue(":u_id", $u_i);
-            $query->bindValue(":un", $un);
+            $query->bindValue(":fn", $fn);
+            $query->bindValue(":ln", $ln);
 
             return $query->execute();
         }
@@ -238,16 +273,16 @@ class Account {
         return false;
     }
 
-    public function registSubscript($ph, $em, $bd, $un) {
+    public function registSubscript($u_i, $ph, $em, $bd) {
         $this->validatePhone($ph);
         $this->validateNewEmail($em, $un);
 
         if(empty($this->errorArray)) {
-            $query = $this->con->prepare("UPDATE users SET phone=:ph, email=:em, bod=:bd WHERE username=:un");
+            $query = $this->con->prepare("UPDATE users SET phone=:ph, email=:em, bod=:bd WHERE user_id=:u_id");
             $query->bindValue(":ph", $ph);
             $query->bindValue(":em", $em);
             $query->bindValue(":bd", $bd);
-            $query->bindValue(":un", $un);
+            $query->bindValue(":u_id", $u_i);
 
             return $query->execute();
         }
@@ -264,11 +299,14 @@ class Account {
                                         LEFT JOIN users us 
                                         ON od.user_id = us.user_id
                                         WHERE 1 = 0 
+                                        
                                             UNION ALL
                                             SELECT * FROM orders od
                                             RIGHT JOIN users us
                                             ON od.user_id = us.user_id
-                                            WHERE od.user_id = :u_id ;");
+                                            WHERE od.user_id = :u_id
+                                            ORDER BY order_id DESC
+                                            LIMIT 1 ;");
 
         $query->bindValue(":u_id", $u_i);
     
@@ -365,11 +403,11 @@ class Account {
         }
     }
 
-    public function validateOldPassword($oldPw, $un) {
+    public function validateOldPassword($oldPw, $u_i) {
         $pw = hash("sha512", $oldPw);
 
-        $query = $this->con->prepare("SELECT * FROM users WHERE username=:un AND password=:pw");
-        $query->bindValue(":un", $un);
+        $query = $this->con->prepare("SELECT * FROM users WHERE user_id=:u_i AND password=:pw");
+        $query->bindValue(":u_i", $u_i);
         $query->bindValue(":pw", $pw);
 
         $query->execute();
@@ -447,18 +485,10 @@ class Account {
 
 
 
-
-
     /*  */
     public function getError($error) {
         if(in_array($error, $this->errorArray)) {
             return "<span class='errorMessage'>$error</span>";
-        }
-    }
-
-    public function getFirstError() {
-        if(!empty($this->errorArray)) {
-            return $this->errorArray[0];
         }
     }
 

@@ -22,16 +22,8 @@ if(isset($_SESSION["user_id"])){
 
     if(!empty($data)){
         $username = $data['username'];
-        $phone = $data['phone'];
-        $address = $data['address'];
-        $address2 = $data['address2'];
-        $city = $data['city'];
-        $postal = $data['postal'];
-        $country = $data['country'];
-        $prov = $data['prov'];
         $firstName = $data['firstName'];
-        $lastName = $data['lastName'];
-        $email = $data['email'];
+      
     } else {
         $username = $_SESSION["loggedIn"];
         $firstName = null;
@@ -43,12 +35,13 @@ if(isset($_SESSION["user_id"])){
 }
 
 
-if(isset($_POST["submitAcc"])) {
-    $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+if(isset($_POST["submitPwd"])) {
+    $fname = FormSanitizer::sanitizeFormString($_POST["firstName"]);
+    $lname = FormSanitizer::sanitizeFormString($_POST["lastName"]);
     $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
     $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
     $oldpassword = FormSanitizer::sanitizeFormPassword($_POST["oldpassword"]);
-    $sqlData = $account->updatePassword($u_i, $username, $oldpassword, $password, $password2);
+    $sqlData = $account->updatePassword($u_i, $fname, $lname, $oldpassword, $password, $password2);
 
     if($sqlData) {
         $_SESSION["loggedIn"] = $username;
@@ -60,7 +53,24 @@ if(isset($_POST["submitSub"])) {
     $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
     $bd = mktime(0, 0, 0, $_POST['year'], $_POST['month'], $_POST['day']);
     $bod = date("Y-m-d h:i:sa", $bd);
-    $sqlData = $account->registSubscript($phone, $email, $bod, $username);
+    
+    $sqlData = $account->registSubscript($u_i, $phone, $email, $bod);
+
+    if($sqlData) {
+        echo "<script>alert('Updated successfully');</script>";
+    } 
+}
+if(isset($_POST["submitAdd"])) {
+
+    $phone = FormSanitizer::sanitizeFormPhone($_POST["phone"]);
+    $add = FormSanitizer::sanitizeFormString($_POST["address"]);
+    $add2 = FormSanitizer::sanitizeFormString($_POST["address2"]);
+    $city = FormSanitizer::sanitizeFormString($_POST["city"]);
+    $postal = FormSanitizer::sanitizeFormPostal($_POST["postal"]);
+    $prov = $_POST["prov"];
+    $country = $_POST["country"];
+    
+    $sqlData = $account->updateAccAddress($u_i, $phone, $add, $add2, $city, $postal, $prov, $country);
 
     if($sqlData) {
         echo "<script>alert('Updated successfully');</script>";
@@ -136,7 +146,6 @@ function getInputValue($in) {
                                         $html .= $cell;
                                     }
                                     echo $html;
-                                    
                             } else {
                                 $cell = GetAccountAlerts::getOrderlistAlert();
                                 $html .= $cell;
@@ -169,20 +178,24 @@ function getInputValue($in) {
                     <div class="left_sec acc">
                         <div class="input_ ad">
                             <input id="input_ad" type="checkbox" >
-                            <label for="input_ad">My Address Book</label>
+                            <label for="input_ad">Edit My Address</label>
 
                             <div class="hiddendiv div_ad">
-                                <div class="address book">
+                                <form id="login-form-ad" method="POST">
 
                                 
-        <?php if($firstName){ 
-                echo AccountSub::getAddressContainer($data);
-        } else {  ?>
+                                    <?php if($firstName){ 
+                                            echo AccountSub::getAddressContainer($data, $con);
+                                    } else {  ?>
 
                                         <p class="row pv r_e"><span>No address saved</span></p>
                                     <?php } ?>
-                    
-                                </div>
+
+                                    <div class="form-div">
+                                        <input type="submit" class="btn" id="login-btn-ad" name="submitAdd" value="Change Address Info" />
+                                    </div>
+
+                                </form>
                             </div>
                         </div>
                         <div class="input_ se">
@@ -201,13 +214,6 @@ function getInputValue($in) {
                                     </div>
 
                                     <div class="form-div acc">
-                                    <?php echo $account->getError(Constants::$phoneCharacters); ?>
-                                    <?php echo $account->getError(Constants::$phoneInvalid); ?>
-                                        <label>Phone</label>
-                                        <input type="text" class="form-input acc" value="<?php echo isset($phone)?$phone:''; ?>" name="phone" placeholder="Phone" required />
-                                    </div>
-
-                                    <div class="form-div acc">
                                         <div class="dob">
                                             <label>DOB</label>
 
@@ -218,7 +224,7 @@ function getInputValue($in) {
                                         </div>
                                     </div>                
                                     <div class="form-div">
-                                        <input type="submit" class="btn" id="login-btn-se" name="submitSub" value="Change Subscription Info" />
+                                        <input type="submit" class="btn" id=ad" name="submitSub" value="Change Subscription Info" />
                                     </div>
 
                                 </form>
@@ -231,13 +237,15 @@ function getInputValue($in) {
                            
                             <div class="hiddendiv div_pw">
                                 <form id="login-form-pw" method="POST">
-                                <?php echo $account->getError(Constants::$passwordsDontMatch); ?>
-                                <?php echo $account->getError(Constants::$passwordLength); ?>
+                                    <?php echo $account->getError(Constants::$passwordsDontMatch); ?>
+                                    <?php echo $account->getError(Constants::$passwordLength); ?>
                 
             <?php 
-                echo AccountSub::changePassword($data);
+                echo AccountSub::changePassword($data, $con);
             ?>
-
+                                    <div class="form-div acc">
+                                        <input type="submit" class="btn" id="login-btn-pw" name="submitPwd" value="Change Password" />
+                                    </div>
                                 </form>
                             </div>
 
@@ -246,15 +254,15 @@ function getInputValue($in) {
                     </div>  
 
                     <div class="main_sec">
-                        <h2 class="main_title">Account  </br> information</h2>
+                        <h2 class="main_title">Account</br> information</h2>
                         <hr class="order_hr">
 
                         <?php if(isset($firstName)){ ?>
                             <div class="m_sec acc">  
 
-            <?php
-                echo AccountSub::accountInfoCont($data);
-            ?>
+                            <?php
+                                echo AccountSub::accountInfoCont($data);
+                            ?>
 
                             </div>
                         <?php } else if(!isset($firstName) && ($sub == true)){ ?>

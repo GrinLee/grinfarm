@@ -1,19 +1,16 @@
 <?php
-require_once("includes/config.php");
+require_once("Constants.php");
+require_once("Account.php");
+
 
 
 class AccountSub{
 
-    public static function getAccountInfoBox(){
 
+    public static function getAddressContainer($data, $con){
 
+        $account = new Account($con);
 
-
-    }
-
-    public static function getAddressContainer($data){
-
-        $username = $data['username'];
         $phone = $data['phone'];
         $address = $data['address'];
         $address2 = $data['address2'];
@@ -21,43 +18,59 @@ class AccountSub{
         $postal = $data['postal'];
         $country = $data['country'];
         $prov = $data['prov'];
-        $firstName = $data['firstName'];
-        $lastName = $data['lastName'];
         $email = $data['email'];
 
 
         $html ='';
-        $html .='<div class="div">
-                    <p class="row pt r_f"><span>User Name:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv r_e"><span>'.$username.'</span></p>
+        $html .='<div class="form-div acc">'.$account->getError(Constants::$phoneCharacters).'
+                                            '.$account->getError(Constants::$phoneInvalid).'
+                    <label>Phone</label>
+                    <input type="text" class="form-input acc" value="'.$phone.'" name="phone" placeholder="Phone" required />
                 </div>
-                <div>
-                    <p class="row pt l_f"><span>phone:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv l_e"><span>'.$phone.'</span></p>
+
+                <div class="form-div acc">'.$account->getError(Constants::$addressCharacters).'
+                    <label>Address</label>
+                    <input type="text" class="form-input acc" value="'.$address.'" name="address" placeholder="Address" required />
                 </div>
-                <div>
-                    <p class="row pt l_f"><span>address:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv l_e"><span>'.$address.'</span></p>
+
+                <div class="form-div acc">'.$account->getError(Constants::$addressCharacters).'
+                    <label>Address2</label>
+                    <input type="text" class="form-input acc" value="'.$address2.'" name="address2" placeholder="Address2"/>
                 </div>
-                <div>
-                    <p class="row pt l_f"><span>address2:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv l_e"><span>'.$address2.'</span></p>
+                <div class="form-div divided">              
+                    <div class="form-div acc split">'.$account->getError(Constants::$cityCharacters).'
+                        <label>City</label>
+                        <input type="text" class="form-input acc" value="'.$city.'" name="city" placeholder="City" required />
+                    </div>
+                    <div class="form-div acc split">
+                        <label>Province/State</label>
+                        <select class="form-input" name="prov" required >
+                            <option value="">Select Provinces</option>
+                            <option value="AL">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MA">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NF">Newfoundland and Labrador</option>
+                            <option value="ON" selected>Ontario</option>
+                            <option value="NO">Northwest Territories</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="NU">Nunavut</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="div">
-                    <p class="row pt l_f"><span>city:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv l_s"><span>'.$city.'</span></p>
-                </div>
-                <div class="div">
-                    <p class="row pt r_f"><span>postal:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv r_e"><span>'.$postal.'</span></p>
-                </div>
-                <div class="div">
-                    <p class="row pt l_f"><span>country:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv l_s"><span>'.$country.'</span></p>
-                </div>
-                <div class="div">
-                    <p class="row pt r_f"><span>province:</span>&nbsp;&nbsp;</p>
-                    <p class="row pv r_e"><span>'.$prov.'</span></p>
+                <div class="form-div divided">              
+                    <div class="form-div acc split">'.$account->getError(Constants::$postalCharacters).'
+                        <label>Postal</label> 
+                        <input type="text" class="form-input acc" value="'.$postal.'" name="postal" placeholder="Postal" required />
+                    </div>
+                    <div class="form-div acc split">
+                        <label>Country</label>
+                        <select class="form-input" name="country" required >
+                            <option value="">Select Country</option>
+                            <option value="CANADA" selected>Canada</option>
+                            <option value="KOREA">Korea</option>
+                        </select>
+                    </div>
                 </div>';
 
         return $html;
@@ -101,14 +114,25 @@ class AccountSub{
 
 
 
-    public static function changePassword($data){
+    public static function changePassword($data, $con){
 
-        $user = isset($data['username']) ? $data['username'] : '';
+        $account = new Account($con);
+        
+        $firstName = $data['firstName'];
+        $lastName = $data['lastName'];
 
         $html ='';
-        $html .='<div class="form-div acc">
-                    <label>User Name</label>
-                    <input type="text" class="form-input acc" value="'.$user.'" name="username" placeholder="Username" required />
+        $html .='<div class="form-div divided">              
+                    <div class="form-div acc split">
+                        '.$account->getError(Constants::$firstNameCharacters).'
+                        <label>First Name</label>
+                        <input type="text" class="form-input" value="'.$firstName.'" name="firstName" placeholder="First Name" required />
+                    </div>
+                    <div class="form-div acc split">
+                        '.$account->getError(Constants::$lastNameCharacters).'
+                        <label>Last Name</label>
+                        <input type="text" class="form-input" value="'.$lastName.'" name="lastName" placeholder="Last Name" required />
+                    </div>
                 </div>
 
                 <div class="form-div acc">
@@ -125,10 +149,6 @@ class AccountSub{
                 <div class="form-div acc">
                     <label>Password Confirm</label>
                     <input type="password" class="form-input acc" name="password2" placeholder="Password Confirm" required />
-                </div>
-                
-                <div class="form-div acc">
-                    <input type="submit" class="btn" id="login-btn-pw" name="submitAcc" value="Change Password" />
                 </div>';
 
         return $html;
