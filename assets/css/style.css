@@ -626,7 +626,7 @@ section .form-div{
     bottom: 35px;
 }
 .form-div.acc label{
-    bottom: 35px;
+    bottom: 31px;
 }
 .form-div.divided{
     display:flex;
@@ -639,7 +639,7 @@ section .form-div{
 }
 
 .form-input.acc{
-    height: 35px;
+    height: 31px;
     border-radius: 3px;
 }
 
@@ -651,14 +651,7 @@ section .form-div{
     border: 0;
     height: 35px;
 }
-#login-btn-pw, #login-btn-se{
-    color: var(--grey);
-    background-color: var(--ligy);
-    margin-top: 5px;
-    border-radius: 3px;
-    border: var(--bord) solid 1px;
-    height: 25px;
-}
+
 #register-url{
     text-decoration: none;
     color: var(--dkbr);
@@ -731,6 +724,17 @@ input[id^="input_"],
 
 .input_:has( > input:checked){
     padding: 10px 0 25px 5px!important;
+}
+
+.hiddendiv form .form-div .btn:hover{
+    background-color: var(--ligy);
+}
+
+.hiddendiv form .form-div .btn{
+    background-color: var(--libd);
+    border: var(--libd) solid 1px;
+    height: 25px;
+    border-radius: 2px;
 }
 
 .input_.ad input:checked ~ .hiddendiv.div_ad,

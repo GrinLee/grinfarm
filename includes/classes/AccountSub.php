@@ -44,7 +44,7 @@ class AccountSub{
                     </div>
                     <div class="form-div acc split">
                         <label>Province/State</label>
-                        <select class="form-input" name="prov" required >
+                        <select class="form-input acc" name="prov" required >
                             <option value="">Select Provinces</option>
                             <option value="AL">Alberta</option>
                             <option value="BC">British Columbia</option>
@@ -65,7 +65,7 @@ class AccountSub{
                     </div>
                     <div class="form-div acc split">
                         <label>Country</label>
-                        <select class="form-input" name="country" required >
+                        <select class="form-input acc" name="country" required >
                             <option value="">Select Country</option>
                             <option value="CANADA" selected>Canada</option>
                             <option value="KOREA">Korea</option>
@@ -126,12 +126,12 @@ class AccountSub{
                     <div class="form-div acc split">
                         '.$account->getError(Constants::$firstNameCharacters).'
                         <label>First Name</label>
-                        <input type="text" class="form-input" value="'.$firstName.'" name="firstName" placeholder="First Name" required />
+                        <input type="text" class="form-input acc" value="'.$firstName.'" name="firstName" placeholder="First Name" required />
                     </div>
                     <div class="form-div acc split">
                         '.$account->getError(Constants::$lastNameCharacters).'
                         <label>Last Name</label>
-                        <input type="text" class="form-input" value="'.$lastName.'" name="lastName" placeholder="Last Name" required />
+                        <input type="text" class="form-input acc" value="'.$lastName.'" name="lastName" placeholder="Last Name" required />
                     </div>
                 </div>
 
